@@ -36,7 +36,7 @@ public class HomeController {
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request) {
 
-		ArrayList<Book> cartItems = null;
+		/*ArrayList<Book> cartItems = null;
 
 		HttpSession session = request.getSession();
 
@@ -53,6 +53,9 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView("index", "books", books);
 
 		modelAndView.addObject("cart_items", cartItems);
+		return modelAndView;*/
+		
+		ModelAndView modelAndView = new ModelAndView("navbar");
 		return modelAndView;
 
 	}
