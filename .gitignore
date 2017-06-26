@@ -44,7 +44,8 @@ dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
-
+application-config.xml
+logback.xml
 
 # OS
 .DS_Store
@@ -55,3 +56,4 @@ release.properties
 pom.xml.releaseBackup
 pom.xml.tag
 *.springBeans
+/.mvn/
