@@ -43,64 +43,21 @@
 
     
     <div class="row column text-center">
-      <h2>Our Newest Books</h2>
-      </div>
-      
-      <div class="row small-up-2 medium-up-3 large-up-6">
-      <div class="column">
-        <img class="thumbnail" src="http://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Add to Cart</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="http://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Add to Cart</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="http://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Add to Cart</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="http://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Add to Cart</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="http://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Add to Cart</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="http://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Add to Cart</a>
-      </div>
-    </div>
-      
+      <h2>Our Newest Books
       
       <%
-         Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
-          
+         Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");    
       %>
       
-      
+      </h2>
       <hr>
 
-    <div class="row small-up-2 large-up-4">
+    <div class="row small-up-2 medium-up-3 large-up-6">
     
     <%
     
     for(Book book: books)
-    {
-      
+    { 
    
     %>
       <div class="column">
@@ -118,6 +75,54 @@
     </div>
 
     <hr>
+      
+      
+      
+      </div>
+      
+      <!--
+      <div class="row small-up-2 medium-up-3 large-up-6">
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/300x400">
+        <h5>Nulla At Nulla Justo, Eget</h5>
+        <p>$400</p>
+        <a href="/bookDetails" class="button small expanded hollow">Add to Cart</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/300x400">
+        <h5>Nulla At Nulla Justo, Eget</h5>
+        <p>$400</p>
+        <a href="/bookDetails" class="button small expanded hollow">Add to Cart</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/300x400">
+        <h5>Nulla At Nulla Justo, Eget</h5>
+        <p>$400</p>
+        <a href="/bookDetails" class="button small expanded hollow">Add to Cart</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/300x400">
+        <h5>Nulla At Nulla Justo, Eget</h5>
+        <p>$400</p>
+        <a href="/bookDetails" class="button small expanded hollow">Add to Cart</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/300x400">
+        <h5>Nulla At Nulla Justo, Eget</h5>
+        <p>$400</p>
+        <a href="/bookDetails" class="button small expanded hollow">Add to Cart</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/300x400">
+        <h5>Nulla At Nulla Justo, Eget</h5>
+        <p>$400</p>
+        <a href="/bookDetails" class="button small expanded hollow">Add to Cart</a>
+      </div>
+    </div>
+    -->
+      
+      
+      
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>

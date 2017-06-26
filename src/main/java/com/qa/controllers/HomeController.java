@@ -50,7 +50,7 @@ public class HomeController {
 
 		Iterable<Book> books = bookService.findAll();
 
-		ModelAndView modelAndView = new ModelAndView("index", "books", books);
+		ModelAndView modelAndView = new ModelAndView("index2", "books", books);
 
 		modelAndView.addObject("cart_items", cartItems);
 		return modelAndView;*/
