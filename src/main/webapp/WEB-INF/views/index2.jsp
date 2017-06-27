@@ -19,7 +19,7 @@
 
 
     
-    <div class="row column text-center">
+    <div class="row column text-center" style="height:1000000px;">
       <h2>Our Newest Books
       
       <%
