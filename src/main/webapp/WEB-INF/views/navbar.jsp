@@ -12,8 +12,6 @@
   </div>
   <div class="top-bar-right">
     <ul class="menu">
-      <li><a href="#cart" style="padding: 0px;"><i class="fi-shopping-cart navbar-icon" style="padding: 5px 8px;"></i></a></li>
-      
       <li><input type="search" placeholder="Search"></li>
       <li><button type="button" class="button">Search</button></li>
       <% if (session.getAttribute("logged_in_customer") != null) { %>
@@ -35,7 +33,7 @@
       <% } else {%>
             <li><a href="#login"><span>Login</span>&nbsp|&nbsp<span>Register</span></a></li>
       <% } %>
-      
+      <li><a href="#cart" style="padding: 0px;"><i class="fi-shopping-cart navbar-icon" style="padding: 5px 8px;"></i></a></li>
     </ul>
   </div>
 </div>
