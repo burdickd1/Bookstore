@@ -1,6 +1,6 @@
 <html>
 <%
- 	request.setAttribute("pagetitle", "Contact Us");
+ 	request.setAttribute("pagetitle", "Contact");
 	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
 	rd.include(request, response);
 %>
@@ -13,7 +13,7 @@
 		</div>
 		<div class="small-6 columns form">
 			<div class="row column text-center">
-				<h2>Contact Us!</h2>
+				<h2>Contact</h2>
 			</div>
 			<p class="formFont"> Feel free to contact us at 555-555-5555 with any questions or concerns. </p>
 			<p class="formFont"> Additionally, you can send us a message and we will get back to you as soon as we can: </p>

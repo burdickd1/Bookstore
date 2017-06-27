@@ -1,14 +1,14 @@
 
 <html>
 <%
- 	request.setAttribute("pagetitle", "About | Online Shopping");
+ 	request.setAttribute("pagetitle", "About");
 	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
 	rd.include(request, response);
 %>
   <body>
 	<jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
 	<div class="row column text-center">
-		<h2 style="color: #233237; font-family:'Signika', sans-serif">About Us!</h2>
+		<h2 style="color: #233237; font-family:'Signika', sans-serif">About</h2>
 	</div>
 	<div class="row">
 		<div class="small-3 columns">
@@ -19,7 +19,7 @@
 			listed on the FAKE under the symbol of CCC. </p> <br>
 			<p>ChickenCluckers.com uses the recognition of our brand as a premier book provider across the country. 
 			</p> <br>
-			<p>We LOVE books! 
+			<p>We LOVE <span style="text-decoration:line-through">chickens</span> books! 
 			And it is our goal to share our passion with others and to spread the joy of reading.  </p>
 		</div>
 		<div class="small-3 columns"></div>

@@ -7,7 +7,7 @@
       	<span style="font-family: 'Permanent Marker', cursive; font-size: 20px;">Cluckers</span>
 	  </li>
 	  <li><a class="interact" href="/">Home</a></li>
-      <li><a class="interact" href="/aboutUs">About Us</a></li>
+      <li><a class="interact" href="/aboutUs">About</a></li>
       <li><a class="interact" href="/contact">Contact</a></li>
     </ul>
   </div>
