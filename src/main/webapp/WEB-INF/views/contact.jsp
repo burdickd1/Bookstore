@@ -5,11 +5,7 @@
 	rd.include(request, response);
 %>
   <body>
-<%
-	RequestDispatcher rd1 = request.getRequestDispatcher("/WEB-INF/views/navbar.jsp");
-	rd1.include(request, response);
-%>
-	
+	<jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
 	<div class="row column text-center">
 		<h2 style="color: #233237; font-family:'Signika', sans-serif">Contact Us!</h2>
 	</div>
@@ -30,6 +26,7 @@
 		</div>
 		<div class="small-3 columns"></div>
 	</div>
+	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
 
 
