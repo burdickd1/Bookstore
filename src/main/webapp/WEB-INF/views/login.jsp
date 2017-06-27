@@ -46,9 +46,9 @@
                <form action="loginProcess" method="post"> 
               
                <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email"/> 
+                <input type="email" placeholder="Enter email" name="email" id="email" required/> 
                 <label>Password * </label>
-				 <input type="password" placeholder="Enter Password" name="password" id="password"/>
+				 <input type="password" placeholder="Enter Password" name="password" id="password" required/>
             	<input type="submit" class="button expanded" value="Login">
               
               </form>
