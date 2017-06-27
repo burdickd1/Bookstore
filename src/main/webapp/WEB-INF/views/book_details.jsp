@@ -4,7 +4,7 @@
 <%
 
     Book book = (Book) request.getAttribute("book");
-    request.setAttribute("pagetitle", book.getTitle() +" | Details");
+    request.setAttribute("pagetitle", book.getTitle() + " | Details");
     RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
     rd.include(request, response);
 %>
@@ -13,6 +13,7 @@
    
 
 <jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
+
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->
     <div class="row columns">

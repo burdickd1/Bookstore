@@ -13,25 +13,29 @@
   <div class="top-bar-right">
     <ul class="menu">
       <li><a href="#cart" style="padding: 0px;"><i class="fi-shopping-cart navbar-icon" style="padding: 5px 8px;"></i></a></li>
-      <li class="dropdown">
-      	<a style="padding: 0px;">
-      		<i class="fi-torso navbar-icon" href="#account" style="padding: 5px 10px;"></i>
-      	</a>
-      	<div class="dropdown-content">
-      		<div class="dropdown-content-menu">
-      			<ul>
-      				<li><a href="#account">Account</a></li>
-      				<li><a href="#history">Order History</a></li>
-      				<li><a href="#password">Change Password</a></li>
-      				<li><a href="#logout">Sign Out</a></li>
-      			</ul>
-      		</div>
-		</div>
-      </li>
+      
       <li><input type="search" placeholder="Search"></li>
       <li><button type="button" class="button">Search</button></li>
-      <li><a href="#login"><span>Login</span>&nbsp|&nbsp<span>Register</span></a></li>
-      <li class="dropdown">
+      <% if (session.getAttribute("logged_in_customer") != null) { %>
+            <li class="dropdown">
+        <a style="padding: 0px;">
+            <i class="fi-torso navbar-icon" href="#account" style="padding: 5px 10px;"></i>
+        </a>
+        <div class="dropdown-content">
+            <div class="dropdown-content-menu">
+                <ul>
+                    <li><a href="#account">Account</a></li>
+                    <li><a href="#history">Order History</a></li>
+                    <li><a href="#password">Change Password</a></li>
+                    <li><a href="#logout">Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+      </li>
+      <% } else {%>
+            <li><a href="#login"><span>Login</span>&nbsp|&nbsp<span>Register</span></a></li>
+      <% } %>
+      
     </ul>
   </div>
 </div>
