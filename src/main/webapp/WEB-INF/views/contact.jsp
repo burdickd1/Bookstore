@@ -1,6 +1,6 @@
 <html>
 <%
- 	request.setAttribute("pagetitle", "Contact");
+ 	request.setAttribute("pagetitle", "Contact | Online Shopping");
 	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
 	rd.include(request, response);
 %>
