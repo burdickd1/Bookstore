@@ -30,7 +30,7 @@
     font-size: 22px;
 }
 
-.top-bar a:hover {
+.top-bar .interact:hover {
     color: #233237;
 }
 
@@ -162,6 +162,32 @@ video {
   display: inline-block;
   height: 25px;
   width: 25px;
+}
+
+.form {
+    margin: auto;
+    width: 50%;
+    border: 2px solid #984b43;
+    padding: 10px;
+    margin: 25px auto;
+}
+
+h2 {
+	color: #233237; 
+	font-family: 'Arvo', serif;
+}
+
+.button {
+	background-color: #984b43;
+}
+
+.button:hover {
+	background-color: #233237;
+}
+
+.form-break {
+	font-size: 30px;
+	font-family: 'Oleo Script', cursive;
 }
 
 

@@ -11,6 +11,5 @@
 	<link rel="stylesheet" href="css/foundation-icons/foundation-icons.css"/>
 	<link rel="stylesheet" href="css/texts.css"/>
 	
-	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Bevan|Lora" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Bevan|Lora|Arvo|Oleo+Script" rel="stylesheet">
 </head>

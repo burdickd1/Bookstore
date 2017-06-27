@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -71,6 +72,15 @@ public class HomeController {
 
 		return modelAndView;
 	}
+	
+	@RequestMapping("/logout")
+	public ModelAndView logout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.setAttribute("logged_in_customer", null);
+		ModelAndView modelAndView = new ModelAndView("index");
+
+		return indexPage(request);
+	}
 
 	@RequestMapping("/register")
 	public ModelAndView register() {
@@ -126,7 +136,7 @@ public class HomeController {
 
 		if (c != null) {
 			System.out.println("Success");
-			modelAndView = new ModelAndView("customer_home", "logged_in_customer", c);
+			modelAndView = new ModelAndView("index", "logged_in_customer", c);
 		} else {
 			System.out.println("Failure");
 			modelAndView = new ModelAndView("login_failed");
