@@ -180,11 +180,4 @@ public class HomeController {
 
 		return modelAndView;
 	}
-
-	/*@RequestMapping("/homish")
-	public ModelAndView homish() {
-		ModelAndView modelAndView = new ModelAndView("register");
-
-		return modelAndView;
-	}*/
 }
