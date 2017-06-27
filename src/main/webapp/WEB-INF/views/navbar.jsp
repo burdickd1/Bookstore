@@ -31,7 +31,7 @@
         </div>
       </li>
       <% } else {%>
-            <li><a href="#login"><span>Login</span>&nbsp|&nbsp<span>Register</span></a></li>
+            <li><a href="/login"><span>Login</span>&nbsp|&nbsp<span>Register</span></a></li>
       <% } %>
       <li><a href="#cart" style="padding: 0px;"><i class="fi-shopping-cart navbar-icon" style="padding: 5px 8px;"></i></a></li>
     </ul>
