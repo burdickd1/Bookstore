@@ -1,25 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<div class="footer callout large secondary">
-      <div class="row">
-        <div class="large-4 columns">
-          <h5>QA Cinema</h5>
-          <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit.</p>
-		  <p align="center">&copy QA Cinemas Inc. | All Rights Reserved
-        </div>
-        <div class="large-2 large-offset-2 columns">
-        </div>
-        <div class="large-4 columns">
-			
-        </div>
-      </div>
+<div class="footer callout large secondary" style="background-color: #eac67a; color:#984b43; margin: 0px;">
+  <div class="row">
+    <div class="large-12 columns">
+      <p align="center"><a href="#top"><i class="arrow-up"></i></a></p>
+	  <p align="center" style="text-align-center; font-family: 'Lora', serif;">&copy Chicken Cluckers Inc. | All Rights Reserved</p>
     </div>
-</body>
-</html>
+  </div>
+</div>
+	
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/elsevier.js"></script>
+<script>
+  $(document).foundation();
+</script> 
