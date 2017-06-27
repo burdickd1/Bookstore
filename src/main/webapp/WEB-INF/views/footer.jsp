@@ -2,7 +2,7 @@
   <div class="row">
     <div class="large-12 columns">
       <p align="center"><a href="#top"><i class="arrow-up"></i></a></p>
-	  <p align="center" style="text-align-center; font-family: 'Lora', serif;">&copy Chicken Cluckers Inc. | All Rights Reserved</p>
+	  <p align="center" style="text-align-center; font-family: 'Lora', serif;">&copy Chicken Cluckers Corp. | All Rights Reserved</p>
     </div>
   </div>
 </div>
