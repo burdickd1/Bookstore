@@ -45,23 +45,28 @@
                 
                 
                <label>Firstname * </label>
-               <input type="text" placeholder="Enter firstname" name="firstName" id="firstName"/> 
+               <input type="text" placeholder="Enter firstname" name="firstName" id="firstName" required/> 
                <label>Lastname * </label>
-               <input type="text" placeholder="Enter lastname" name="lastName" id="lastName"/> 
+               <input type="text" placeholder="Enter lastname" name="lastName" id="lastName" required/> 
                <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email"/> 
+                <input type="email" placeholder="Enter email" name="email" id="email" required/> 
                 <label>Password * </label>
-				 <input type="password" placeholder="Enter Password" name="password" id="password"/>
+				 <input type="password" placeholder="Enter Password" name="password" id="password" required/>
             	
             </div>
             
             <div class="medium-6">
            
-          	 <input type="checkbox" name="aggreement"/> I have read and understood the 
-          	 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its terms. 
-         
-            </div>
-      		
+          	 <input type="checkbox" name="aggreement" required/> I have read and understood the 
+          	 <a href="#" data-open="myModal">Registered User Agreement </a> and agree to be bound by all of its terms. 
+         	
+				<div id="myModal" class="reveal" data-reveal >
+  					<jsp:include page="/WEB-INF/views/EULA.jsp"></jsp:include>
+  					<a class="close-button" data-close>&#215;</a>
+				</div>
+			
+			</div>
+      		<br>
       		<input type="submit" class="button create account" value="Create Account">
               
               </form>

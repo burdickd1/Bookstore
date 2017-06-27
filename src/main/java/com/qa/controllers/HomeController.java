@@ -104,7 +104,7 @@ public class HomeController {
 
 		Customer c = customerService.save(customer);
 
-		if (c != null) {
+		if (c != null && c.getEmail().length() != 0) {
 			modelAndView = new ModelAndView("registration_success");
 		} else {
 			modelAndView = new ModelAndView("registration_failed");

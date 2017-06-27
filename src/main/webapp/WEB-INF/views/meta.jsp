@@ -12,4 +12,5 @@
 	<link rel="stylesheet" href="css/texts.css"/>
 	
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Bevan|Lora" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
 </head>
