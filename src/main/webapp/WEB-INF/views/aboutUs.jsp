@@ -15,8 +15,8 @@
 		<p></p>
 		</div>
 		<div class="small-6 columns" style="color: #223237">
-			<p>ChickenCluckers.com is owned entirely by ChickenCluckers, INC, a privately traded company
-			listed on the FAKE under the symbol of CCI. </p> <br>
+			<p>ChickenCluckers.com is owned entirely by ChickenCluckers Corp., a privately traded company
+			listed on the FAKE under the symbol of CCC. </p> <br>
 			<p>ChickenCluckers.com uses the recognition of our brand as a premier book provider across the country. 
 			</p> <br>
 			<p>We LOVE books! 
