@@ -47,7 +47,7 @@
 }
 
 .top-bar .is-active {
-    border-box 0px #000000;
+    border-box: 0px #000000;
 }
 
 .dropdown {

@@ -51,18 +51,22 @@
         <h3><%=book.getTitle() %></h3>
         <p><%=book.getDescription() %></p>
 
+		<form action="/addToCart" method="get">
         <label>Select the format
-        <select>
+        <select required>
           <option value="">-- Select -- </option>
           <option value="print">Paperback</option>
           <option value="eBook">eBook</option>
           <option value="printAndeBook">PrintBook & eBook</option>
         </select>
+        <input type="hidden" name="bookId" value="<%=book.getBookId()%>"/>
+        <button id="Add to Cart" class="button large expanded" >Add to Cart</button>
         </label>
+        </form>
 
         
 
-        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a>
+        <!-- <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a> -->
 
         <!-- <div class="small secondary expanded button-group">
             <a class="button">Facebook</a>
