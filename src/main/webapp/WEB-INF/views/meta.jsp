@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="css/skin.css"/>
 	<link rel="stylesheet" href="css/foundation-icons/foundation-icons.css"/>
+	<link rel="stylesheet" href="css/texts.css"/>
 	
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Bevan" rel="stylesheet">
 </head>

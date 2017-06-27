@@ -18,7 +18,7 @@
 		<p>
 		</p>
 		</div>
-		<div class="small-6 columns callout">
+		<div class="small-6 columns callout secondary">
 			
 			<p> Feel free to contact us at 555-555-5555 with any questions or concerns </p>
 			<p> Additionally, you can send us a message and we will get back to you as soon as we can </p>
