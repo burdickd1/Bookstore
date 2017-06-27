@@ -11,7 +11,7 @@
 %>
 	
 	<div class="row column text-center">
-		<h2>Contact Us!</h2>
+		<h2 style="color: #233237; font-family:'Signika', sans-serif">Contact Us!</h2>
 	</div>
 	<div class="row ">
 		<div class="small-3 columns">
