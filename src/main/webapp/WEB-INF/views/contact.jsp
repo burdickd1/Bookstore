@@ -1,44 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Contact Us</title>
-<link rel="stylesheet" href="css/style.css"/>
-</head>
-<body>
-
- <!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="/">Home</a></li>
-          
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        
-             <ul class="dropdown menu" data-dropdown-menu>
-            
-            <li class="has-submenu">
-              <a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
-                <li><a href="/login">Register | Login</a></li>
-              </ul>
-            </li>
-            <li><a href="/aboutUs">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-          
-      </div>
-    </div>
-    <!-- End Top Bar -->
+<%
+ 	request.setAttribute("pagetitle", "Contact Us");
+	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
+	rd.include(request, response);
+%>
+  <body>
+<%
+	RequestDispatcher rd1 = request.getRequestDispatcher("/WEB-INF/views/navbar.jsp");
+	rd1.include(request, response);
+%>
 
 	<div class="row column text-center">
-	<h2>Contact Us</h2>
-
+		<h2>Contact Us!</h2>
+	</div>
+	<div class="row ">
+		<div class="small-3 columns">
+		<p>
+		</p>
+		</div>
+		<div class="small-6 columns callout">
+			
+			<p> Feel free to contact us at 555-555-5555 with any questions or concerns </p>
+			<p> Additionally, you can send us a message and we will get back to you as soon as we can </p>
+			<form action="">
+				Email: <input type="text" name="email">
+				Your Message: <textarea name="message" cols="50" rows="10" style="resize:none"></textarea>
+				<input type="submit" name="submit">
+			</form>
+		</div>
+		<div class="small-3 columns"></div>
+	</div>
 </body>
+
+
 </html>
