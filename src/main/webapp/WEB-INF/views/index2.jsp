@@ -2,6 +2,7 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
+<%@page import="javax.servlet.RequestDispatcher"%>
 <%@page import="com.qa.models.Book"%>
 <html class="no-js" lang="en">
 <%
@@ -12,7 +13,6 @@
   <body>
 
  <%
- 	request.setAttribute("pagetitle", "Online Shopping");
 	rd = request.getRequestDispatcher("/WEB-INF/views/navbar.jsp");
 	rd.include(request, response);
 %>
@@ -99,7 +99,20 @@
     -->
       
       
-      
+     <div class="footer callout large secondary">
+      <div class="row">
+        <div class="large-4 columns">
+          <h5>QA Cinema</h5>
+          <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit.</p>
+		  <p align="center">&copy QA Cinemas Inc. | All Rights Reserved
+        </div>
+        <div class="large-2 large-offset-2 columns">
+        </div>
+        <div class="large-4 columns">
+			
+        </div>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>

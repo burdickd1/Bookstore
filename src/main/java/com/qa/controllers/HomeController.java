@@ -36,7 +36,7 @@ public class HomeController {
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request) {
 
-		/*ArrayList<Book> cartItems = null;
+		ArrayList<Book> cartItems = null;
 
 		HttpSession session = request.getSession();
 
@@ -53,11 +53,16 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView("index2", "books", books);
 
 		modelAndView.addObject("cart_items", cartItems);
-		return modelAndView;*/
 		
-		ModelAndView modelAndView = new ModelAndView("navbar");
 		return modelAndView;
 
+	}
+	
+	@RequestMapping("/home")
+	public ModelAndView index2(){
+		ModelAndView modelAndView = new ModelAndView("index2");
+
+		return modelAndView;
 	}
 
 	@RequestMapping("/login")
@@ -176,4 +181,10 @@ public class HomeController {
 		return modelAndView;
 	}
 
+	/*@RequestMapping("/homish")
+	public ModelAndView homish() {
+		ModelAndView modelAndView = new ModelAndView("register");
+
+		return modelAndView;
+	}*/
 }

@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="com.qa.models.Book"%>
+<%@page import="javax.servlet.RequestDispatcher"%>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,34 +12,11 @@
     <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
-
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="#">Home</a></li>
-          
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        
-             <ul class="dropdown menu" data-dropdown-menu>
-            
-            <li class="has-submenu">
-              <a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
-                <li><a href="/login">Register | Login</a></li>
-              </ul>
-            </li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          
-      </div>
-    </div>
-    <!-- End Top Bar -->
+<%
+	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/navbar.jsp");
+	rd.include(request, response);
+%>
+    
 
 
     
@@ -80,7 +58,20 @@
     </div>
 
     <hr>
-
+	<div class="callout large secondary">
+      <div class="row">
+        <div class="large-4 columns">
+          <h5>QA Cinema</h5>
+          <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit.</p>
+		  <p>&copy QA Cinemas Inc. | All Rights Reserved
+        </div>
+        <div class="large-2 large-offset-2 columns">
+        </div>
+        <div class="large-4 columns">
+			<img src="http://placehold.it/400x200">
+        </div>
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
     <script>
