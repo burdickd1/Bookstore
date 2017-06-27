@@ -5267,12 +5267,6 @@ INSERT IGNORE INTO Payment_info (customer_id_payment, address_id_payment, card_n
 
 
 
-create table purchase (
-	book_id_purchase VARCHAR(10),
-	customer_id_purchase VARCHAR(10),
-	date DATE,
-	quantity INT
-);
 INSERT IGNORE INTO purchase (book_id_purchase, customer_id_purchase, date, quantity) values (318, 763, '5/12/2017', 7);
 INSERT IGNORE INTO purchase (book_id_purchase, customer_id_purchase, date, quantity) values (189, 440, '9/27/2016', 6);
 INSERT IGNORE INTO purchase (book_id_purchase, customer_id_purchase, date, quantity) values (214, 862, '4/30/2017', 3);
