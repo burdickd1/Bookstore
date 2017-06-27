@@ -27,6 +27,10 @@ body, button, legend {
 h1, h2, h3, h4, h5, h6, p {
 	text-rendering: optimizeLegibility
 }
+h1,h2,h3,h4,h5,h6 {
+	color: #233237;
+	font-family: "Bevon";
+}
 
 .dropdown-pane, .invisible {
 	visibility: hidden
@@ -2215,7 +2219,7 @@ select[multiple] {
 }
 
 .callout.secondary {
-	background-color: #233227
+	background-color: #EAC67A
 }
 
 .callout.success {
@@ -3688,4 +3692,5 @@ table.hover tr:nth-of-type(even):hover {
 	.top-bar-right {
 		float: right
 	}
+}
 }
