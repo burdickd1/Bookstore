@@ -1,11 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <%
- 	request.setAttribute("pagetitle", "Online Shopping");
+ 	request.setAttribute("pagetitle", "Login | Online Shopping");
 	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
 	rd.include(request, response);
 %>
   <body>
+  	<jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
     <div class="large" style="padding-top: 50px;">
       <div class="row column">
         <div class="small-3 form">
@@ -21,6 +22,7 @@
 		</div>
       </div>
     </div>
+    <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
   </body>
 </html>
 

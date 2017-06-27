@@ -1,7 +1,7 @@
 
 <html>
 <%
- 	request.setAttribute("pagetitle", "Contact Us");
+ 	request.setAttribute("pagetitle", "About | Online Shopping");
 	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
 	rd.include(request, response);
 %>

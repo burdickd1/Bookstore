@@ -190,4 +190,9 @@ public class HomeController {
 
 		return modelAndView;
 	}
+	
+	@RequestMapping("/search")
+	public void serach(){
+		
+	}
 }
