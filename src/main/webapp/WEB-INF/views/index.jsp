@@ -12,7 +12,7 @@
 %>
   <body>
 <%
-	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/navbar.jsp");
+	rd = request.getRequestDispatcher("/WEB-INF/views/navbar.jsp");
 	rd.include(request, response);
 %>
     
@@ -36,10 +36,10 @@
     <div class="row small-up-2 large-up-4">
     
     <%
-    
+    int i = 0;
     for(Book book: books)
     {
-      
+      	if(i++ > 10)break;
    
     %>
       <div class="column">
