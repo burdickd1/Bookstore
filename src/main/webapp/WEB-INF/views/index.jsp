@@ -5,12 +5,11 @@
 <%@page import="com.qa.models.Book"%>
 <%@page import="javax.servlet.RequestDispatcher"%>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Shopping</title>
-    <link rel="stylesheet" href="css/style.css"/>
-  </head>
+<%
+ 	request.setAttribute("pagetitle", "Online Shopping");
+	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
+	rd.include(request, response);
+%>
   <body>
 <%
 	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/navbar.jsp");
