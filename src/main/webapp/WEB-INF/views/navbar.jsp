@@ -1,4 +1,4 @@
-<div class="top-bar sticky" style="width:100%">
+<div class="top-bar" style="width:100%">
   <div class="top-bar-left">
     <ul class="menu">
       <li class="menu-text title-logo">
@@ -35,4 +35,3 @@
     </ul>
   </div>
 </div>
-<div style="padding-top:60px"></div>
