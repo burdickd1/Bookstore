@@ -6,13 +6,8 @@
       	<span style="font-family: 'Permanent Marker', cursive; font-size: 20px;">Cluckers</span>
 	  </li>
 	  <li><a href="/">Home</a></li>
-<<<<<<< HEAD
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#contact">Contact</a></li>
-=======
       <li><a href="/aboutUs">About Us</a></li>
       <li><a href="/contact">Contact</a></li>
->>>>>>> cbd8e3dc12c34f5df56c77ff41152799c10b9386
     </ul>
   </div>
   <div class="top-bar-right">
