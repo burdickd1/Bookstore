@@ -4,13 +4,16 @@ package com.qa.models;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
+@Table(name="book")
 public class Book {
 	
 	@Id
@@ -52,7 +55,7 @@ public class Book {
 	private String bookImage;
 	
 
-
+	@Column(name="book_id")
 	public int getBookId() {
 		return bookId;
 	}
@@ -149,6 +152,17 @@ public class Book {
 
 	public void setBookImage(String bookImage) {
 		this.bookImage = bookImage;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [bookId=" + bookId + ", title=" + title + ", description="
+				+ description + ", publisher=" + publisher + ", format="
+				+ format + ", publishedDate=" + publishedDate + ", pageCount="
+				+ pageCount + ", authors=" + authors + ", price=" + price
+				+ ", paperISBN=" + paperISBN + ", eBookISBN=" + eBookISBN
+				+ ", tableOfContents=" + tableOfContents + ", bookImage="
+				+ bookImage + "]";
 	}
 	
 	
