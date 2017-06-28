@@ -1,7 +1,7 @@
 
 function calculateTotalPrice(price,oldQuantity, quantity,price_label)
 {
-	var qChange = quantity-oldQuantity;
+		   var qChange = quantity-oldQuantity;
 	       var cartTotal = document.getElementById("cart_total").value;
 	      
 

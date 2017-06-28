@@ -12,7 +12,6 @@ import com.qa.models.Customer;
 import com.qa.services.AddressService;
 
 @Controller
-@SessionAttributes(names = { "books", "cart_items", "logged_in_customer" })
 public class AddressBookController {
 
 	@Autowired
@@ -26,11 +25,6 @@ public class AddressBookController {
 
 		Address billingAddress = null;
 		Address shippingAddress = null;
-		System.out.println("Before update ");
-
-		System.out.println("ID " + loggedInCustomer.getCustomerId());
-		System.out.println("Name" + loggedInCustomer.getFirstName());
-		System.out.println("Email" + loggedInCustomer.getEmail());
 
 		Address bAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
 
@@ -46,8 +40,7 @@ public class AddressBookController {
 			if (recordsUpdated > 0) {
 				billingAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
 				shippingAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
-
-				System.out.println("After update ");
+				System.out.println("test+ " +  billingAddress.toString());
 				modelAndView = new ModelAndView("address_book", "billing_address", billingAddress);
 				modelAndView.addObject("shipping_address", shippingAddress);
 			} else {
@@ -57,10 +50,12 @@ public class AddressBookController {
 			}
 
 		} else {
+			address.setCustomerId(loggedInCustomer.getCustomerId());
 			Address savedAddress = addressService.save(address);
 			modelAndView = new ModelAndView("address_book", "billing_address", savedAddress);
 
 		}
+
 		return modelAndView;
 	}
 
