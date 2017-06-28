@@ -1,16 +1,13 @@
 package com.qa.controllers;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.qa.models.*;
+import com.qa.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.qa.models.Book;
-import com.qa.models.Customer;
-import com.qa.models.Shipping;
-import com.qa.services.BookService;
-import com.qa.services.CustomerService;
 
 @Controller
 @SessionAttributes(names = { "books", "cart_items", "logged_in_customer", "Address" })
@@ -34,6 +25,9 @@ public class HomeController {
 
 	@Autowired
 	CustomerService customerService;
+
+//	@Autowired
+//	OrderService orderService;
 
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request) {
@@ -240,4 +234,21 @@ public class HomeController {
 	public void serach(){
 		
 	}
+
+//	@RequestMapping("/orderHistory")
+//	public ModelAndView orderHistory(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
+//		ModelAndView modelAndView = new ModelAndView("order_history", "logged_in_customer", loggedInCustomer);
+//		List<Purchase> purchases = orderService.findByCustomerId(loggedInCustomer.getCustomerId());
+//		// maps purchase to book, so we can display a grid of purchase and book details in the order history page
+//		// TODO: return this map and format order history page after ordering capability is completed
+//		Map<Purchase, Book> purchaseBooks = new HashMap<>();
+//		for (Purchase purchase : purchases) {
+//			Book b = bookService.findOne(purchase.getBookIdPurchase());
+//			purchaseBooks.put(purchase, b);
+//		}
+//		for (Map.Entry<Purchase, Book> purchaseBook : purchaseBooks.entrySet()) {
+//			System.out.println("test: " + purchaseBook.getKey().getDate() + " Book: " + purchaseBook.getValue().getAuthors().size());
+//		}
+//		return modelAndView;
+//	}
 }

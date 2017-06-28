@@ -190,6 +190,10 @@ h2 {
 	font-family: 'Oleo Script', cursive;
 }
 
+.order-block {
+    border:1px solid rgba(50,50,50,.3);
+    height:200px;
+}
 
 
 

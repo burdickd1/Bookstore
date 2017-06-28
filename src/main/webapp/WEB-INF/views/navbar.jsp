@@ -24,7 +24,7 @@
             <div class="dropdown-content-menu">
                 <ul>
                     <li><a href="/profile">Account</a></li>
-                    <li><a href="#history">Order History</a></li>
+                    <li><a href="/orderHistory">Order History</a></li>
                     <li><a href="/addressBook">Address Book</a></li>
                     <li><a href="/password">Change Password</a></li>
                     <li><a href="/logout">Sign Out</a></li>
@@ -33,7 +33,7 @@
         </div>
       </li> 
       <% } %>
-      <li><a href="#cart" style="padding: 0px;"><i class="fi-shopping-cart navbar-icon" style="padding: 5px 8px;"></i></a></li>     
+	  <li><a href="/viewCart" style="padding: 0px;"><i class="fi-shopping-cart navbar-icon" style="padding: 5px 8px;"></i></a></li>     
       <li><form action="search" method="post" id="searchFrom"><input type="search" placeholder="Search" name="searchterm"></form></li>
       <li><button type="button" class="button" onclick="$('#searchFrom').submit();">Search</button></li>
       <% if (session.getAttribute("logged_in_customer") == null) { %>
