@@ -191,8 +191,45 @@ h2 {
 }
 
 .order-block {
-    border:1px solid rgba(50,50,50,.3);
+    border:1px solid #984b43;
     height:200px;
+}
+
+.history img {
+	margin-top: 10px;
+	margin-left: calc(50% - 100px);
+}
+
+.history .left p {
+	margin-top: -15px;
+	margin-left: calc(50% - 100px);
+	color: #984b43;
+	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	
+}
+
+.history .right p {
+	color: #233237;
+	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	margin-bottom: -5px;
+}
+
+.history .right p b {
+	color: #984b43;
+	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	margin-bottom: -5px;
+}
+
+.history .right .title {
+	color: #984b43;
+	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	padding-bottom: 10px;
+	margin-top: 10px;
+}
+.history .right .title:hover {
+	text-decoration: underline;
+	cursor: pointer;
+	color: #233237;
 }
 
 
