@@ -25,6 +25,7 @@
                 <ul>
                     <li><a href="/profile">Account</a></li>
                     <li><a href="#history">Order History</a></li>
+                    <li><a href="#shipping">Address Book</a></li>
                     <li><a href="#password">Change Password</a></li>
                     <li><a href="/logout">Sign Out</a></li>
                 </ul>
