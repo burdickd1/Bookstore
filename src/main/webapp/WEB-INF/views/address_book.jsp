@@ -1,5 +1,5 @@
 <!doctype html>
-<%@page import="com.qa.models.Customer"%>
+<%@ page import="com.qa.models.*" %>
 <html class="no-js" lang="en">
 <%
  	request.setAttribute("pagetitle", "History | Online Shopping");
@@ -18,6 +18,16 @@
   
   <%
  		c = (Customer) session.getAttribute("logged_in_customer");
+      Address billingAddress = (Address) request.getAttribute("billing_address");
+      Address shippingAddress = (Address) request.getAttribute("shipping_address");
+      if (billingAddress == null) {
+          billingAddress = new Address();
+          billingAddress.validate();
+      }
+      if (shippingAddress == null) {
+          shippingAddress = new Address();
+          shippingAddress.validate();
+      }
   %>
    
     
@@ -25,16 +35,16 @@
        <div class="row">
         <div class="small-3 form">
            <h2 class="text-center"> Billing Address </h2>
-                
+
               <form action="/updateAddress" method="post">
-               <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" required/> 
-               <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2"/> 
-                <input type="text" placeholder="City *" name="city" id="city" required/> 
-                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" required/> 
-                <input type="text" placeholder="State/County *" name="state" id="state" required/> 
-                <input type="text" placeholder="Country *" name="country" id="county" required/> 
-                <input type="text" placeholder="Phone number *" name="phoneNumber" id="phoneNumber" required/> 
-                <input type="hidden" name="addressType" id="addressType" value="billing"/> 
+               <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" value="<%=billingAddress.getAddressLine1()%>" autocomplete="off" required/>
+               <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" value="<%=billingAddress.getAddressLine2()%>" autocomplete="off" />
+                <input type="text" placeholder="City *" name="city" id="city" value="<%=billingAddress.getCity()%>" autocomplete="off" required/>
+                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" value="<%=billingAddress.getPostcode()%>" autocomplete="off" required/>
+                <input type="text" placeholder="State/County *" name="state" id="state" value="<%=billingAddress.getState()%>" autocomplete="off" required/>
+                <input type="text" placeholder="Country *" name="country" id="county" value="<%=billingAddress.getCountry()%>" autocomplete="off" required/>
+                <input type="text" placeholder="Phone number *" name="phoneNumber" id="phoneNumber" value="<%=billingAddress.getPhoneNumber()%>" autocomplete="off" required/>
+                <input type="hidden" name="addressType" id="addressType" value="billing" />
                 <input type="submit" class="button create account expanded" value="Update Billing Address">
                </form>
             </div>

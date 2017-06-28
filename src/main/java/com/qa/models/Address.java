@@ -1,13 +1,13 @@
 package com.qa.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Address {
 
 	
 	@Id
+	@GeneratedValue
 	private int addressId;
 	
 	
@@ -109,7 +109,36 @@ public class Address {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	
-	
-	
+
+	public void validate() {
+		addressLine1 = defaultField(addressLine1);
+		addressLine2 = defaultField(addressLine2);
+		city = defaultField(city);
+		postcode = defaultField(postcode);
+		state = defaultField(state);
+		country = defaultField(country);
+		phoneNumber = defaultField(phoneNumber);
+	}
+	private String defaultField(String s) {
+		if (s == null) {
+			return "";
+		} else {
+			return s;
+		}
+	}
+	@Override
+	public String toString() {
+		return "Address{" +
+						"addressId=" + addressId +
+						", addressLine1='" + addressLine1 + '\'' +
+						", addressLine2='" + addressLine2 + '\'' +
+						", city='" + city + '\'' +
+						", postcode='" + postcode + '\'' +
+						", state='" + state + '\'' +
+						", country='" + country + '\'' +
+						", phoneNumber='" + phoneNumber + '\'' +
+						", addressType='" + addressType + '\'' +
+						", customerId=" + customerId +
+						'}';
+	}
 }
