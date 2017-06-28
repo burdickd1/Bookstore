@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "book_authors")
-public class BookAuthor {
+public class BookAuthors {
 	@Id
 	@GeneratedValue
 	private int id;
