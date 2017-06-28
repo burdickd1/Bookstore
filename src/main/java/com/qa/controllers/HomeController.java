@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Book;
@@ -74,12 +75,10 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/logout")
-	public ModelAndView logout(HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		session.setAttribute("logged_in_customer", null);
-		ModelAndView modelAndView = new ModelAndView("index");
-
-		return indexPage(request);
+	public ModelAndView logout(SessionStatus status) {
+		status.setComplete();
+		String url = "";
+		return new ModelAndView("redirect:" + url);
 	}
 
 	@RequestMapping("/register")
@@ -139,7 +138,7 @@ public class HomeController {
 			modelAndView = new ModelAndView("index", "logged_in_customer", c);
 		} else {
 			System.out.println("Failure");
-			modelAndView = new ModelAndView("login_failed");
+			modelAndView = new ModelAndView("login");
 		}
 
 		return modelAndView;
