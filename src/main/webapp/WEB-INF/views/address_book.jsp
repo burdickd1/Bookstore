@@ -23,10 +23,8 @@
     
        
        <div class="row">
-        
-       
-        <div class="large-6 columns">
-           <h3> Billing Address </h3>
+        <div class="small-3 form">
+           <h2 class="text-center"> Billing Address </h2>
                 
               <form action="/updateAddress" method="post">
                <label>Address Line1 * </label>
@@ -54,23 +52,21 @@
                 <input type="hidden" name="addressType" id="addressType" value="billing"/> 
                 
                 
-                <input type="submit" class="button create account" value="Update Billing Address">
+                <input type="submit" class="button create account expanded" value="Update Billing Address">
                </form>
             </div>
             
           
-               <div class="medium-6 columns">
-                <h3> Shipping Address </h3>
+               <div class="small-3 form">
+                <h2 class="text-center"> Shipping Address </h2>
                 
                 <input type="checkbox" class="ba" checked="checked" /> Different from billing address
                 
               <form action="/updateAddress" method="post">
-               <label>Address Line1 * </label>
-               <input type="text" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1" class="tex" required/> 
-               <label>Address Line2 </label>
-               <input type="text" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2" class="tex"/> 
+               <input type="text" placeholder="Enter Address 1 *" name="addressLine1" id="addressLine1" class="tex" required/> 
+               <input type="text" placeholder="Enter Address 2" name="addressLine2" id="addressLine2" class="tex"/> 
                <label>City * </label>
-                <input type="text" placeholder="Enter City" name="city" id="city" class="tex" required/> 
+                <input type="text" placeholder="Enter City *" name="city" id="city" class="tex" required/> 
                   <label>Postcode * </label>
                 <input type="text" placeholder="Enter Postcode" name="postcode" id="postcode" class="tex" required/> 
                 
@@ -90,7 +86,7 @@
                 <input type="hidden" name="addressType" id="addressType" value="shipping"/> 
                 
                 
-                <input type="submit" class="button create account" value="Update Shipping Address">
+                <input type="submit" class="button create account expanded" value="Update Shipping Address">
                </form>
             </div>
              
