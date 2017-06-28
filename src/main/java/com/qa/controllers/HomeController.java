@@ -188,6 +188,47 @@ public class HomeController {
 		return modelAndView;
 	}
 
+	@RequestMapping("/updatePassword")
+	public ModelAndView updatePassword(@ModelAttribute("logged_in_customer") Customer loggedInCustomer,
+			@RequestParam("old_password") String old_password,
+			@RequestParam("password") String password,
+			@RequestParam("password2") String password2 ) {
+
+		ModelAndView modelAndView = null;
+
+		Customer c = customerService.findOne(loggedInCustomer.getCustomerId());
+		
+		if (!(password.equals( password2 )) || !(c.getPassword().equals( old_password ))) {
+			System.out.println("Password form invalid");
+			System.out.println("Password: " + password + "   ---   Password Confirm: " + password2);
+			System.out.println("Entered Old: " + old_password + "   ---   Actual Old: " + c.getPassword());
+			modelAndView = new ModelAndView("updatePassword", "logged_in_customer", loggedInCustomer);
+			return modelAndView;
+		} else {
+
+			System.out.println("Before update ");
+	
+			System.out.println("Password " + c.getPassword());
+			c.setPassword(password);
+			int recordsUpdated = customerService.updatePassword(c.getPassword(), c.getCustomerId());
+			System.out.println("recordsUpdated " + recordsUpdated);
+			if (recordsUpdated > 0) {
+				c = customerService.findOne(loggedInCustomer.getCustomerId());
+	
+				System.out.println("After update ");
+	
+				System.out.println("Password " + c.getPassword());
+	
+				modelAndView = new ModelAndView("index", "logged_in_customer", c);
+				return modelAndView;
+			} else {
+				System.out.println("Password update failed ");
+				modelAndView = new ModelAndView("updatePassword", "logged_in_customer", loggedInCustomer);
+				return modelAndView;
+			}
+		}
+	}
+	
 	@RequestMapping("/addressBook")
 	public ModelAndView addressBook(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
 		ModelAndView modelAndView = new ModelAndView("address_book", "logged_in_customer", loggedInCustomer);

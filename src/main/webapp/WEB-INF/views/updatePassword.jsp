@@ -21,34 +21,17 @@
         
         
         <div class="small-3 form">
-        <form action="/updateProfile" method="post">
-           <h2 class="text-center"> Account details </h2>
-           <label>Firstname * </label>
-           <input type="text" placeholder="Enter firstname" name="firstName" id="firstName" value="<%=c.getFirstName() %>"/> 
-           <label>Lastname * </label>
-           <input type="text" placeholder="Enter lastname" name="lastName" id="lastName" value="<%=c.getLastName()%>"/> 
-           <label>Email ID * </label>
-           <input type="text" placeholder="Enter email" name="email" id="email" value="<%=c.getEmail()%>"/> 
+        <form action="/updatePassword" method="post">
+           <h2 class="text-center"> Update Password </h2>
+           <input type="hidden" name="id" value="<%= c.getCustomerId() %>"/>
+           <input type="password" placeholder="Old Password" name="old_password" id="old_password"/> 
+           <input type="password" placeholder="New Password" name="password" id="password"/> 
+           <input type="password" placeholder="Confirm Password" name="password2" id="password2"/>
+           <input type="submit" class="button update password expanded" value="Update Password">    
          </form> 
-         <input type="submit" class="button create account expanded" value="Update Account">   
+         
          </div>
-            
-          
-      		
-      		
-              
-              
-    
-      
-      
       </div>
-       
-       
-       
-       
-       
-       
-       
     </div>
     <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
