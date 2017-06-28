@@ -238,8 +238,6 @@ public class HomeController {
 	@RequestMapping("/orderHistory")
 	public ModelAndView orderHistory(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
 		List<Purchase> purchases = orderService.findByCustomerId(loggedInCustomer.getCustomerId());
-		// maps purchase to book, so we can display a grid of purchase and book details in the order history page
-		// TODO: return this map and format order history page after ordering capability is completed
 		Map<Purchase, Book> purchaseBooks = new HashMap<>();
 		for (Purchase purchase : purchases) {
 			Book b = bookService.findOne(purchase.getBookIdPurchase());

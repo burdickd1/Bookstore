@@ -12,13 +12,14 @@
   <%
  		Map<Purchase, Book> purchaseBooks = (Map<Purchase, Book>) request.getAttribute("purchaseBooks");
   %>
+  <br>
   <section class="row">
       <%
           for (Map.Entry<Purchase, Book> purchaseBook : purchaseBooks.entrySet()) {
       %>
     <div class ="small-6 columns order-block">
         Order Placed: <br>
-        <%= purchaseBook.getKey().getDate() %> <br>
+        <%= purchaseBook.getKey().getDate().toString().substring(0,10) %> <br>
         Quantity: <%= purchaseBook.getKey().getQuantity()%>
 
     </div>
