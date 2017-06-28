@@ -18,44 +18,43 @@
 
         <%
             double orderTotal = (Double) request.getAttribute("order_total");
-            //if(session.getAttribute("logged_in_customer")!=null) {
-            Customer c = (Customer) session.getAttribute("logged_in_customer");
             String tax = request.getParameter("tax");
+            if(session.getAttribute("logged_in_customer")!=null) {
+            Customer c = (Customer) session.getAttribute("logged_in_customer");
+            
         %>
     
         <div class="row">
             <!-- Billing Address Section -->
             <div class="small-3 form"> 
                 <h2 class="text-center"> Billing Address </h2>
-                <input type="text" placeholder="First Name" name="firstName" id="firstName" required>
-                <input type="text" placeholder="Last Name" name="LastName" id="LastName" required>
-                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" required/> 
-                <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2"/> 
-                <input type="text" placeholder="City *" name="city" id="city" required/> 
-                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" required/> 
-                <input type="text" placeholder="State/County *" name="state" id="state" required/> 
-                <input type="text" placeholder="Country *" name="country" id="county" required/> 
-                <input type="text" placeholder="Phone number *" name="phoneNumber" id="phoneNumber" required/>
+                <input type="text" name="firstName" id="firstName" value="<%= c.getFirstName() %>" />
+                <input type="text" placeholder="Last Name" name="LastName" id="LastName" value="<%= c.getLastName() %>" />
+                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" value="" /> 
+                <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" value="" /> 
+                <input type="text" placeholder="City *" name="city" id="city" value="" /> 
+                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" value=""/> 
+                <input type="text" placeholder="State/County *" name="state" id="state" value="" /> 
+                <input type="text" placeholder="Country *" name="country" id="country" value="" />
                 
-                <input type="checkbox" class="ba"/> Different from shipping address
+                <input type="checkbox" name="sameAddressBox" id="sameAddressBox" onChange="showDiv()" checked/> Same as shipping address.
             </div>
             <!-- END Billing Address Section -->
             
             <!-- Shipping Address Section -->
-            <div class="small-3 form"> 
+            <div class="small-3 form" style="display:none;" id="shippingAddress"> 
                 <h2 class="text-center"> Shipping Address </h2>
-                <input type="text" placeholder="First Name" name="firstName" id="firstName" required>
-                <input type="text" placeholder="Last Name" name="LastName" id="LastName" required>
-                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" class="tex" required/> 
+                <input type="text" name="firstName" id="firstName" value="<%= c.getFirstName() %>" />
+                <input type="text" name="LastName" id="LastName" value="<%= c.getLastName() %>" />
+                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" class="tex" /> 
                 <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" class="tex"/> 
-                <input type="text" placeholder="City *" name="city" id="city" class="tex" required/> 
-                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" class="tex" required/> 
-                <input type="text" placeholder="State/County *" name="state" id="state" class="tex" required/> 
-                <input type="text" placeholder="Country *" name="country" id="county" class="tex" required/> 
-                <input type="text" placeholder="Phone number *" name="phoneNumber" id="phoneNumber" class="tex" required/>
+                <input type="text" placeholder="City *" name="city" id="city" class="tex" /> 
+                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" class="tex" /> 
+                <input type="text" placeholder="State/County *" name="state" id="state" class="tex" /> 
+                <input type="text" placeholder="Country *" name="country" id="country" class="tex" />
             </div>
             <!-- END Shipping Address Section-->
-            
+        <% } %>
         </div>
         <div class="row">
             <div class="small-3 columns">
@@ -85,9 +84,16 @@
     <script src="js/update_cart.js"></script>
     <script src="js/validations.js"></script>
     <script> $(document).foundation(); </script>
+    <script>
+        function showDiv() {
+        	   if(!document.getElementById('sameAddressBox').checked){
+        		   document.getElementById('shippingAddress').style.display = "block";
+        	   } else {
+        		   document.getElementById('shippingAddress').style.display = "none";
+        	   }
+        	   
+        }
+    </script>
 </body>
 
 </html>
-
-
-    
