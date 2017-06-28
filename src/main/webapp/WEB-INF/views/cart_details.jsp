@@ -114,19 +114,7 @@
       <%
       i++;
       }
-      //cartTotal 2 decimal places
-      //cartTotal = cartTotal *100;
-      //cartTotal=Math.floor(cartTotal);
-      //cartTotal=cartTotal/100;
-      //order total 2 decimal places
-      //orderTotal = orderTotal *100;
-      //orderTotal=Math.floor(orderTotal);
-      //orderTotal=orderTotal/100;
       double tax = cartTotal*.1;
-      //tax 2 decimal places
-      //tax = tax *100;
-      //tax=Math.floor(tax);
-      //tax=tax/100;
       double totalCost = cartTotal + tax;
       %>
      
@@ -149,9 +137,10 @@
 
           <div class="row">
           <div class="small-3 columns">
-            <label for="middle-label" class="middle">VAT </label>
+            <label for="middle-label" class="middle">Tax </label>
           </div>
           <div class="small-3 columns">
+          	<input type="hidden" name="tax" id="tax" value="<%=tax %>"/>
             <label for="middle-label" class="middle">$<%=tax %></label>
            </div>
            
@@ -168,8 +157,9 @@
       
         </div>
 
-		<form action="/checkout" method="post" id="checkout_form">   
-		<input type="hidden" name="order_total" value="<%=cartTotal %>"/>   
+		<form action="/checkout" method="post" id="checkout_form">
+		<input type="hidden" name="tax" value="<%=tax %>"/>    
+		<input type="hidden" name="order_total" value="<%=totalCost %>"/>   
         <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
         </form> 
       </div>  

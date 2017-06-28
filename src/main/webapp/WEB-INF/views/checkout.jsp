@@ -17,7 +17,8 @@
     
      <%
     
-    double orderTotal = (Double) request.getAttribute("order_total");
+     double orderTotal = (Double) request.getAttribute("order_total");
+     String tax = request.getParameter("tax");
     
    
     %>
@@ -147,10 +148,10 @@
 
           <div class="row">
           <div class="small-3 columns">
-            <label for="middle-label" class="middle">VAT </label>
+            <label for="middle-label" class="middle">Tax </label>
           </div>
           <div class="small-3 columns">
-            <label for="middle-label" class="middle">Applicable Tax </label>
+            <label for="middle-label" class="middle" id="tax_label">$<%=tax%> </label>
            </div>
            
         </div>
