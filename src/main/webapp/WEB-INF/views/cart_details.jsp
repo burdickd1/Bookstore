@@ -4,6 +4,7 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
+<%@page import="java.text.DecimalFormat" %>
 <html class="no-js" lang="en">
 <%
  	request.setAttribute("pagetitle", "Account | Online Shopping");
@@ -113,6 +114,14 @@
       <%
       i++;
       }
+      cartTotal = cartTotal *100;
+      cartTotal=Math.floor(cartTotal);
+      cartTotal=cartTotal/100;
+      double tax = cartTotal*.08;
+      tax = tax *100;
+      tax=Math.floor(tax);
+      tax=tax/100;
+      double totalCost = cartTotal + tax;
       %>
      
       </div>
@@ -137,7 +146,7 @@
             <label for="middle-label" class="middle">VAT </label>
           </div>
           <div class="small-3 columns">
-            <label for="middle-label" class="middle">Applicable Tax </label>
+            <label for="middle-label" class="middle">$<%=tax %></label>
            </div>
            
         </div>
@@ -147,8 +156,8 @@
             <label for="middle-label" class="middle">Order Total  </label>
           </div>
           <div class="small-3 columns">
-            <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/> 
-            <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%></label>
+            <input type="hidden" name="order_total" id="order_total" value="<%=totalCost %>"/> 
+            <label for="middle-label" class="middle" id="order_total_label">$<%=totalCost%></label>
            </div>
       
         </div>
