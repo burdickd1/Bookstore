@@ -13,15 +13,8 @@
 
     <jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
     <div class="row column text-center">
-      <h2>Search Results for &quot;<%= (String)session.getAttribute("searchterm")%>&quot;
-      
-      
-      <%
-         Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
-          
-      %>
-      
-      
+      <h2>Search Results for &quot;<%= request.getAttribute("searchterm")%>&quot;
+      	<% Iterable<Book> books = (Iterable<Book>) session.getAttribute("books"); %>
       </h2>
       <hr>
     </div>
@@ -32,20 +25,19 @@
     int i = 0;
     for(Book book: books){
       if(i++ > 11){break;}
-   
     %>
-      <div class="column">
+      <div class="column searchtable-item">
       
-        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>"></a>
-        <h5><%= book.getTitle()%></h5>
-        <p>$<%= book.getPrice()%></p>
+        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail"  style="width:210px; height:270px" src="<%=book.getBookImage()%>"></a>
+        <div class="ellipses" style="width: 250px; display: block; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+	        <h5 style="width: 250px; display: block; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><%= book.getTitle()%></h5>
+	        <p>$<%= book.getPrice()%></p>
+        </div>
         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
       </div>
     
-    <%
-    }
-    %>  
+    <% } %>  
     </div>
 
     <hr>
