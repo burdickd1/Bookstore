@@ -1,6 +1,6 @@
 delete from elsevier.purchase where date = 0;
 ALTER TABLE `Elsevier`.`purchase` 
-CHANGE COLUMN `test` `purchase_id` INT(11) NOT NULL AUTO_INCREMENT ,
+ADD COLUMN `purchase_id` INT(11) NOT NULL AUTO_INCREMENT AFTER `quantity`,
 ADD PRIMARY KEY (`purchase_id`);
 
 ALTER TABLE `Elsevier`.`request` 
