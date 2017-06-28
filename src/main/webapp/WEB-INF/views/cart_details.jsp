@@ -52,7 +52,7 @@
       for(Book book : books)
       {
     	  
-    	  int quantity = 1;
+    	  int quantity = bookCounts.get(book.getBookId());
     	  double price = book.getPrice();
     	  totalPrice = book.getPrice() * quantity;
     	  cartTotal = cartTotal + book.getPrice()*quantity;
@@ -101,6 +101,10 @@
       <%
       i++;
       }
+      String cartS = String.format("%.2f", cartTotal);
+      cartTotal = Double.parseDouble(cartS);
+      String orderS = String.format("%.2f", totalPrice);
+      totalPrice = Double.parseDouble(orderS);
       double tax = cartTotal*.1;
       String taxS = String.format("%.2f", tax);
       tax = Double.parseDouble(taxS);
@@ -118,7 +122,7 @@
           </div>
           <div class="small-3 columns">
              <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/> 
-            <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %></label>
+            <label for="middle-label" class="middle" id="cart_total_label">$<%=cartS %></label>
            </div>
            
        </div>
@@ -130,7 +134,7 @@
           </div>
           <div class="small-3 columns">
           	<input type="hidden" name="tax" id="tax" value="<%=tax %>"/>
-            <label for="middle-label" class="middle" id="tax_label">$<%=tax %></label>
+            <label for="middle-label" class="middle" id="tax_label">$<%=taxS %></label>
            </div>
            
         </div>
@@ -141,7 +145,7 @@
           </div>
           <div class="small-3 columns">
             <input type="hidden" name="order_total" id="order_total" value="<%=totalCost %>"/> 
-            <label for="middle-label" class="middle" id="order_total_label">$<%=totalCost%></label>
+            <label for="middle-label" class="middle" id="order_total_label">$<%=orderS%></label>
            </div>
       
         </div>
