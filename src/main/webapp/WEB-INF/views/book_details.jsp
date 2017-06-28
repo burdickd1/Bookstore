@@ -155,16 +155,7 @@
       </div>
     </div>
 -->
-    <div class="row column">
-      <hr>
-      <ul class="menu">
-        <li>Online Shopping</li>
-        <li><a href="/">Home</a></li>
-        <li><a href="/aboutUs">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li class="float-right">Copyright 2017</li>
-      </ul>
-    </div>
+	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 
 
  
