@@ -102,6 +102,8 @@
       i++;
       }
       double tax = cartTotal*.1;
+      String taxS = String.format("%.2f", tax);
+      tax = Double.parseDouble(taxS);
       double totalCost = cartTotal + tax;
       %>
      
