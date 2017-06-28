@@ -15,7 +15,7 @@
     Iterator<Book> it = books.iterator();
 %>
     <header class="header">
-        <video preload="auto" autoplay loop muted poster="img/videobg.png" id="bgvid" src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4" ></video>
+        <video preload="auto" autoplay loop muted poster="images/1" id="bgvid" src="videos/library.mp4" type="video/mp4" ></video>
     </header>
     <hr>
     <section>
@@ -87,7 +87,8 @@
     <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
-    <script src="js/foundation.orbit.js"></script>
+    <%--<script src="js/foundation.orbit.js"></script>--%>
+    <script src="js/video.js"></script>
     <script>
       $(document).foundation();
     </script>

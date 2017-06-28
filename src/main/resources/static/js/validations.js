@@ -15,8 +15,6 @@ var country = $("#country").val();
 var email = $("#email").val();
 
 
-
-
 if (firstname === '' && lastname === '' && address1 === '' &&
         
 		address2 === '' && city === '' && postcode === '' &&      

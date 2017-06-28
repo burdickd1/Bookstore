@@ -110,9 +110,7 @@ public class HomeController {
 		System.out.println("Customer Firstname is " + customer.getFirstName());
 
 		System.out.println("Customer Password is " + customer.getPassword());
-
 		Customer c = customerService.save(customer);
-
 		if (c != null && c.getEmail().length() != 0) {
 			modelAndView = new ModelAndView("registration_success");
 		} else {
