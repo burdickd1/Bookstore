@@ -34,8 +34,6 @@
     
     double cartTotal = 0.0;
     
-    double orderTotal = 0.0;
-    
     double totalPrice =  0.0;
     %>
     
@@ -49,28 +47,16 @@
       <% 
      
       
-      /* for(Book book : books)
-      {
-    	  
-    	  int quantity = bookCounts.get(book.getBookId());
-    	  double price = book.getPrice();
-    	  totalPrice = book.getPrice() * quantity;
-    	  cartTotal = cartTotal + book.getPrice()*quantity;
-    	  System.out.println("Cart Total "+cartTotal);
-    	  
-      } */
-      
-      
+
       int i = 0;
       for(Book book : books)
       {
     	  
-    	  int quantity = 1;//bookCounts.get(book.getBookId());
+    	  int quantity = 1;
     	  double price = book.getPrice();
     	  totalPrice = book.getPrice() * quantity;
     	  cartTotal = cartTotal + book.getPrice()*quantity;
-    	  System.out.println("Cart Total "+cartTotal);
-    	  
+
       %>
        
         <img class="thumbnail" src="<%=book.getBookImage()%>"/>
@@ -96,7 +82,8 @@
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
             	Price <label id="price_label<%=i%>">$<%=totalPrice%></label>
             	<input type="hidden" name="cart_total" value="<%=price%>"/>
-            	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
+                <input type ="hidden" id ="old_quant" name="old_quant" value = "1" />
+            	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,old_quant.value, this.value,price_label<%=i%>)"/>
             </form>
           </div>
           
@@ -114,19 +101,8 @@
       <%
       i++;
       }
-      //cartTotal 2 decimal places
-      //cartTotal = cartTotal *100;
-      //cartTotal=Math.floor(cartTotal);
-      //cartTotal=cartTotal/100;
-      //order total 2 decimal places
-      //orderTotal = orderTotal *100;
-      //orderTotal=Math.floor(orderTotal);
-      //orderTotal=orderTotal/100;
+
       double tax = cartTotal*.1;
-      //tax 2 decimal places
-      //tax = tax *100;
-      //tax=Math.floor(tax);
-      //tax=tax/100;
       double totalCost = cartTotal + tax;
       %>
      
