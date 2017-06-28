@@ -8,7 +8,7 @@ public class Purchase {
 
 
     @Id
-    private int test;
+    private int purchaseId;
 
 	private int bookIdPurchase;
 
@@ -18,12 +18,12 @@ public class Purchase {
 
 	private int quantity;
 
-    public int getTest() {
-        return test;
+    public int getPurchaseId() {
+        return purchaseId;
     }
 
-    public void setTest(int test) {
-        this.test = test;
+    public void setPurchaseId(int purchaseId) {
+        this.purchaseId = purchaseId;
     }
 
     public int getBookIdPurchase() {
