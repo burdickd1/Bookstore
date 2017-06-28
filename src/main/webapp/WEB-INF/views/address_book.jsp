@@ -35,6 +35,7 @@
                 <input type="text" placeholder="Country *" name="country" id="county" required/> 
                 <input type="text" placeholder="Phone number *" name="phoneNumber" id="phoneNumber" required/> 
                 <input type="hidden" name="addressType" id="addressType" value="billing"/> 
+                <input type="hidden" name="account" id="account" value="<%= c %>"/>
                 <input type="submit" class="button create account expanded" value="Update Billing Address">
                </form>
             </div>

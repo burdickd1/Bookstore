@@ -12,7 +12,6 @@ import com.qa.models.Customer;
 import com.qa.services.AddressService;
 
 @Controller
-@SessionAttributes(names = { "books", "cart_items", "logged_in_customer" })
 public class AddressBookController {
 
 	@Autowired

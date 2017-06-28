@@ -232,6 +232,19 @@ h2 {
 	color: #233237;
 }
 
+.searchtable-item {
+	padding-bottom: 50px;
+}
+
+.ellipsis {
+	width: 250px; 
+	display: block; 
+	text-overflow: 
+	ellipsis; 
+	white-space: nowrap; 
+	overflow: hidden;
+	margin-bottom: 25px;
+}
 
 
 

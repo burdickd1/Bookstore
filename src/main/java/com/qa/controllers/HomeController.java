@@ -240,8 +240,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/search")
-	public void serach(){
-		
+	public ModelAndView serach(@ModelAttribute("searchterm")String term){
+		List<Book> myBooks = bookService.searchBooks("%" + term + "%");
+		System.out.println("Search for %ance%: " + myBooks);
+		ModelAndView mav = new ModelAndView("searchresults", "books", myBooks);
+		mav.addObject("searchterm", term);
+		return mav;
 	}
 
 	@RequestMapping("/orderHistory")

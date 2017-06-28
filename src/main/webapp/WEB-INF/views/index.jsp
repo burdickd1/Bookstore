@@ -40,7 +40,7 @@
                                     Book book = it.next();
 
                             %>
-                                    <div class="column">
+                                    <div class="column slider-cell">
                                       <div class="product-card">
                                         <div class="product-card-thumbnail">
                                           <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img style="width:210px; height:270px"src=<%=book.getBookImage()%>/></a>
