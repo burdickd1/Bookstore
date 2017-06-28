@@ -245,6 +245,18 @@ public class HomeController {
 		System.out.println("Search for %ance%: " + myBooks);
 		ModelAndView mav = new ModelAndView("searchresults", "books", myBooks);
 		mav.addObject("searchterm", term);
+		mav.addObject("start", new Integer(10));
+		return mav;
+	}
+	
+	@RequestMapping("/searchresults")
+	public ModelAndView searchResults(@
+			ModelAttribute("books")List<Book>myBooks,
+			@ModelAttribute("searchterm")String term,
+			@ModelAttribute("start")Integer startnum){
+		ModelAndView mav = new ModelAndView("searchresults", "books", myBooks);
+		mav.addObject("searchterm", term);
+		mav.addObject("start", startnum + 10);
 		return mav;
 	}
 
