@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OrderService extends CrudRepository<Purchase, Integer>{
-    @Query("select p from Purchase p where p.customer_id_purchase = :customerId")
+    @Query("select p from Purchase p where p.customerIdPurchase = :customerId")
 	public List<Purchase> findByCustomerId(@Param("customerId") int customerId);
 }
 

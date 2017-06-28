@@ -1,11 +1,14 @@
 package com.qa.models;
 
 import java.util.*;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 public class Purchase {
 
+
+    @Id
+    private int test;
 
 	private int bookIdPurchase;
 
@@ -14,6 +17,14 @@ public class Purchase {
 	private Date date;
 
 	private int quantity;
+
+    public int getTest() {
+        return test;
+    }
+
+    public void setTest(int test) {
+        this.test = test;
+    }
 
     public int getBookIdPurchase() {
         return bookIdPurchase;

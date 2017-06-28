@@ -26,8 +26,8 @@ public class HomeController {
 	@Autowired
 	CustomerService customerService;
 
-	@Autowired
-	OrderService orderService;
+//	@Autowired
+//	OrderService orderService;
 
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request) {
@@ -194,20 +194,20 @@ public class HomeController {
 		
 	}
 
-	@RequestMapping("/orderHistory")
-	public ModelAndView orderHistory(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
-		ModelAndView modelAndView = new ModelAndView("order_history", "logged_in_customer", loggedInCustomer);
-		List<Purchase> purchases = orderService.findByCustomerId(loggedInCustomer.getCustomerId());
-		// maps purchase to book, so we can display a grid of purchase and book details in the order history page
-		// TODO: return this map and format order history page after ordering capability is completed
-		Map<Purchase, Book> purchaseBooks = new HashMap<>();
-		for (Purchase purchase : purchases) {
-			Book b = bookService.findOne(purchase.getBookIdPurchase());
-			purchaseBooks.put(purchase, b);
-		}
-		for (Map.Entry<Purchase, Book> purchaseBook : purchaseBooks.entrySet()) {
-			System.out.println("test: " + purchaseBook.getKey().getDate() + " Book: " + purchaseBook.getValue().getAuthors().size());
-		}
-		return modelAndView;
-	}
+//	@RequestMapping("/orderHistory")
+//	public ModelAndView orderHistory(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
+//		ModelAndView modelAndView = new ModelAndView("order_history", "logged_in_customer", loggedInCustomer);
+//		List<Purchase> purchases = orderService.findByCustomerId(loggedInCustomer.getCustomerId());
+//		// maps purchase to book, so we can display a grid of purchase and book details in the order history page
+//		// TODO: return this map and format order history page after ordering capability is completed
+//		Map<Purchase, Book> purchaseBooks = new HashMap<>();
+//		for (Purchase purchase : purchases) {
+//			Book b = bookService.findOne(purchase.getBookIdPurchase());
+//			purchaseBooks.put(purchase, b);
+//		}
+//		for (Map.Entry<Purchase, Book> purchaseBook : purchaseBooks.entrySet()) {
+//			System.out.println("test: " + purchaseBook.getKey().getDate() + " Book: " + purchaseBook.getValue().getAuthors().size());
+//		}
+//		return modelAndView;
+//	}
 }
