@@ -128,7 +128,7 @@
           </div>
           <div class="small-3 columns">
           	<input type="hidden" name="tax" id="tax" value="<%=tax %>"/>
-            <label for="middle-label" class="middle">$<%=tax %></label>
+            <label for="middle-label" class="middle" id="tax_label">$<%=tax %></label>
            </div>
            
         </div>

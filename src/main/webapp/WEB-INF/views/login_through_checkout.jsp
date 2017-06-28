@@ -17,7 +17,7 @@
         <div class="medium-6 columns22">
            <h3> Please login using your stored credentials  </h3>
                 
-               <form action="/loginProcessThroughCheckout" method="post"> 
+               <form action="/loginThroughCheckout" method="post"> 
                 <input type="text" placeholder="Enter email" name="email" id="email"/>
 				 <input type="password" placeholder="Enter Password" name="password" id="password"/>
             	<input type="submit" class="button expanded" value="Submit">
