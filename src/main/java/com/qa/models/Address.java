@@ -26,6 +26,8 @@ public class Address {
 	private String phoneNumber;
 	
 	private String addressType;
+	
+	private int customerId;
 
 	public String getAddressType() {
 		return addressType;
@@ -34,8 +36,6 @@ public class Address {
 	public void setAddressType(String addressType) {
 		this.addressType = addressType;
 	}
-
-	private int customerId;
 	
 
 	public int getCustomerId() {
