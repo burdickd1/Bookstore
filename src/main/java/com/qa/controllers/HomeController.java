@@ -243,7 +243,9 @@ public class HomeController {
 	public ModelAndView serach(@ModelAttribute("searchterm")String term){
 		List<Book> myBooks = bookService.searchBooks("%" + term + "%");
 		System.out.println("Search for %ance%: " + myBooks);
-		return new ModelAndView("aboutUs");
+		ModelAndView mav = new ModelAndView("searchresults", "books", myBooks);
+		mav.addObject("searchterm", term);
+		return mav;
 	}
 
 	@RequestMapping("/orderHistory")
