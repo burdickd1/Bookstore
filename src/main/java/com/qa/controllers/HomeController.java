@@ -180,6 +180,13 @@ public class HomeController {
 
 		return modelAndView;
 	}
+	
+	@RequestMapping("/password")
+	public ModelAndView updatePassword(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
+		ModelAndView modelAndView = new ModelAndView("updatePassword", "logged_in_customer", loggedInCustomer);
+
+		return modelAndView;
+	}
 
 	@RequestMapping("/addressBook")
 	public ModelAndView addressBook(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
