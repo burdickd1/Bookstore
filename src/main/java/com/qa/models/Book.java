@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Book {
 	
 	@Id
+	@Column(name="book_id")
 	private int bookId;
 	
 	private String title;
@@ -54,8 +55,6 @@ public class Book {
 	
 	private String bookImage;
 	
-
-	@Column(name="book_id")
 	public int getBookId() {
 		return bookId;
 	}
