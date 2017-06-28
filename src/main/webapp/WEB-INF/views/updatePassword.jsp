@@ -13,7 +13,7 @@
     <div class="callout large">
       <div class="row column text-center">
         
-        <h2><b>You have logged in as <%=c.getFirstName() %> <%=c.getLastName() %></b></h2>
+        <h2><b>You are logged in as <%=c.getFirstName() %> <%=c.getLastName() %></b></h2>
        </div>
        
        

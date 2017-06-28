@@ -7,6 +7,6 @@ $(".ba").click(function () {
     else {
         $(".tex")
             .attr("disabled", "disabled")
-            .css("background-color", "red");
+            .css("background-color", "#984b43");
     }
 });
