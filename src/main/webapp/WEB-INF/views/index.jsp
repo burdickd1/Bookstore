@@ -59,7 +59,8 @@
                                               }
                                           %>
                                         <span class="product-card-desc">By: <%=authors.toString()%> </span>
-                                        <a href="/addToCart?bookId=" class="product-card-price fi-shopping-cart"> $<%=book.getPrice()%></a>
+                                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="product-card-price fi-shopping-cart"> $<%=book.getPrice()%></a>
+
                                       </div>
                                     </div>
                             <%
