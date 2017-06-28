@@ -82,8 +82,8 @@
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
             	Price <label id="price_label<%=i%>">$<%=totalPrice%></label>
             	<input type="hidden" name="cart_total" value="<%=price%>"/>
-                <input type ="hidden" id ="old_quant" name="old_quant" value = "1" />
-            	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,old_quant.value, this.value,price_label<%=i%>)"/>
+                <input type ="hidden" id ="old_quant"<%=i%> name="old_quant" value = "1" />
+            	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value, this.value,price_label<%=i%>, old_quant.id)"/>
             </form>
           </div>
           
