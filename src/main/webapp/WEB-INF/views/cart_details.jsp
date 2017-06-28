@@ -65,7 +65,7 @@
       for(Book book : books)
       {
     	  
-    	  int quantity = bookCounts.get(book.getBookId());
+    	  int quantity = 1;//bookCounts.get(book.getBookId());
     	  double price = book.getPrice();
     	  totalPrice = book.getPrice() * quantity;
     	  cartTotal = cartTotal + book.getPrice()*quantity;
@@ -89,6 +89,7 @@
           <div class="column">
             Published On <%=book.getPublishedDate()%>
           </div>
+          
           <div class="column">
             <form name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
@@ -99,9 +100,8 @@
             </form>
           </div>
           
-         
         </div>
-        
+  
         <div class="row small-up-4">
           
           <div class="column">
@@ -114,13 +114,19 @@
       <%
       i++;
       }
-      cartTotal = cartTotal *100;
-      cartTotal=Math.floor(cartTotal);
-      cartTotal=cartTotal/100;
-      double tax = cartTotal*.08;
-      tax = tax *100;
-      tax=Math.floor(tax);
-      tax=tax/100;
+      //cartTotal 2 decimal places
+      //cartTotal = cartTotal *100;
+      //cartTotal=Math.floor(cartTotal);
+      //cartTotal=cartTotal/100;
+      //order total 2 decimal places
+      //orderTotal = orderTotal *100;
+      //orderTotal=Math.floor(orderTotal);
+      //orderTotal=orderTotal/100;
+      double tax = cartTotal*.1;
+      //tax 2 decimal places
+      //tax = tax *100;
+      //tax=Math.floor(tax);
+      //tax=tax/100;
       double totalCost = cartTotal + tax;
       %>
      
