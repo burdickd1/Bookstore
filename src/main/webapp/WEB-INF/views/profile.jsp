@@ -25,31 +25,31 @@
     <div class="callout large">
       <div class="row column text-center">
         
-        <h3>You have logged in as <%=c.getFirstName() %></h3>
+        <h2><b>You have logged in as <%=c.getFirstName() %> <%=c.getLastName() %></b></h2>
        </div>
        
        
        <div class="row column">
         
+        
+        <div class="small-3 form">
         <form action="/updateProfile" method="post">
-        <div class="medium-6">
-           <h3> Account details </h3>
-                
-                
-               <label>Firstname * </label>
-               <input type="text" placeholder="Enter firstname" name="firstName" id="firstName" value="<%=c.getFirstName() %>"/> 
-               <label>Lastname * </label>
-               <input type="text" placeholder="Enter lastname" name="lastName" id="lastName" value="<%=c.getLastName()%>"/> 
-               <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email" value="<%=c.getEmail()%>"/> 
-                
-            </div>
+           <h2 class="text-center"> Account details </h2>
+           <label>Firstname * </label>
+           <input type="text" placeholder="Enter firstname" name="firstName" id="firstName" value="<%=c.getFirstName() %>"/> 
+           <label>Lastname * </label>
+           <input type="text" placeholder="Enter lastname" name="lastName" id="lastName" value="<%=c.getLastName()%>"/> 
+           <label>Email ID * </label>
+           <input type="text" placeholder="Enter email" name="email" id="email" value="<%=c.getEmail()%>"/> 
+         </form> 
+         <input type="submit" class="button create account expanded" value="Update Account">   
+         </div>
             
           
       		
-      		<input type="submit" class="button create account" value="Update Account">
+      		
               
-              </form>
+              
     
       
       
