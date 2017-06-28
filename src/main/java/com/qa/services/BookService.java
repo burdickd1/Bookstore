@@ -27,6 +27,7 @@ INNER JOIN book_authors ba on b.book_id = ba.book_book_id
 INNER JOIN author a ON ba.authors_author_id = a.author_id
 WHERE a.author_name LIKE 'Aili Paula'
  */
+
 	/*@Query("SELECT b FROM Book b INNER JOIN BookAuthors ba on b.bookId = ba.book_book_id INNER JOIN ba.Author a ON a.authors_author_id = a.authorId WHERE UPPER(a.authorName) LIKE UPPER(:searchterm)")
 	public List<Book> searchBookByAuthor(@Param("searchterm")String searchterm);
 	*/
