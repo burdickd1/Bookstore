@@ -34,8 +34,6 @@
     
     double cartTotal = 0.0;
     
-    double orderTotal = 0.0;
-    
     double totalPrice =  0.0;
     %>
     
@@ -49,28 +47,16 @@
       <% 
      
       
-      /* for(Book book : books)
-      {
-    	  
-    	  int quantity = bookCounts.get(book.getBookId());
-    	  double price = book.getPrice();
-    	  totalPrice = book.getPrice() * quantity;
-    	  cartTotal = cartTotal + book.getPrice()*quantity;
-    	  System.out.println("Cart Total "+cartTotal);
-    	  
-      } */
-      
-      
+
       int i = 0;
       for(Book book : books)
       {
     	  
-    	  int quantity = bookCounts.get(book.getBookId());
+    	  int quantity = 1;
     	  double price = book.getPrice();
     	  totalPrice = book.getPrice() * quantity;
     	  cartTotal = cartTotal + book.getPrice()*quantity;
-    	  System.out.println("Cart Total "+cartTotal);
-    	  
+
       %>
        
         <img class="thumbnail" src="<%=book.getBookImage()%>"/>
@@ -89,19 +75,20 @@
           <div class="column">
             Published On <%=book.getPublishedDate()%>
           </div>
+          
           <div class="column">
             <form name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
             	Price <label id="price_label<%=i%>">$<%=totalPrice%></label>
             	<input type="hidden" name="cart_total" value="<%=price%>"/>
-            	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
+                <input type ="hidden" id ="old_quant" name="old_quant" value = "1" />
+            	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,old_quant.value, this.value,price_label<%=i%>)"/>
             </form>
           </div>
           
-         
         </div>
-        
+  
         <div class="row small-up-4">
           
           <div class="column">
@@ -114,13 +101,7 @@
       <%
       i++;
       }
-      cartTotal = cartTotal *100;
-      cartTotal=Math.floor(cartTotal);
-      cartTotal=cartTotal/100;
-      double tax = cartTotal*.08;
-      tax = tax *100;
-      tax=Math.floor(tax);
-      tax=tax/100;
+      double tax = cartTotal*.1;
       double totalCost = cartTotal + tax;
       %>
      
@@ -143,9 +124,10 @@
 
           <div class="row">
           <div class="small-3 columns">
-            <label for="middle-label" class="middle">VAT </label>
+            <label for="middle-label" class="middle">Tax </label>
           </div>
           <div class="small-3 columns">
+          	<input type="hidden" name="tax" id="tax" value="<%=tax %>"/>
             <label for="middle-label" class="middle">$<%=tax %></label>
            </div>
            
@@ -162,8 +144,9 @@
       
         </div>
 
-		<form action="/checkout" method="post" id="checkout_form">   
-		<input type="hidden" name="order_total" value="<%=cartTotal %>"/>   
+		<form action="/checkout" method="post" id="checkout_form">
+		<input type="hidden" name="tax" value="<%=tax %>"/>    
+		<input type="hidden" name="order_total" value="<%=totalCost %>"/>   
         <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
         </form> 
       </div>  

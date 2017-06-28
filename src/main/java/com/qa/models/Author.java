@@ -1,9 +1,12 @@
 package com.qa.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="author")
 public class Author {
 
 	
@@ -18,6 +21,7 @@ public class Author {
 	
 	private String expertise;
 
+	@Column(name="author_id")
 	public int getAuthorId() {
 		return authorId;
 	}

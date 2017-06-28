@@ -20,7 +20,8 @@ public class CheckoutController {
 	@RequestMapping("/checkoutProcess")
 	public ModelAndView checkoutProcess(@ModelAttribute("Shipping") Shipping shipping,
 			@ModelAttribute("book_counts") Map<Integer, Integer> bookCounts,
-			@RequestParam("order_total") double orderTotal) {
+			@RequestParam("order_total") double orderTotal,
+			@RequestParam("tax") double tax){
 		System.out.println("First name " + shipping.getFirstName());
 		ModelAndView modelAndView = new ModelAndView("payment_form", "order_total", orderTotal);
 		modelAndView.addObject("shipping_address", shipping);
