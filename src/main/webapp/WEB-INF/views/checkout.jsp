@@ -4,234 +4,89 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
+<%@page import="com.qa.models.Customer"%>
 <html class="no-js" lang="en">
 <%
- 	request.setAttribute("pagetitle", "Contact | Online Shopping");
-	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
-	rd.include(request, response);
+    request.setAttribute("pagetitle", "Contact | Online Shopping");
+    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
+    rd.include(request, response);
 %>
   <body>
-	<jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
     
     <form action="/checkoutProcess" method="post">
-    
-     <%
-    
-     double orderTotal = (Double) request.getAttribute("order_total");
-     String tax = request.getParameter("tax");
-    
-   
-    %>
-    
-  
-    <!-- You can now combine a row and column if you just need a 12 column row -->
-    <div class="row columns">
-      <nav aria-label="You are here:" role="navigation">
-        
-      </nav>
-    </div>
 
-    <div class="row">
- 
-      <div class="medium-6 columns">
-      
-       <h2> Shipping Address </h2>
-        
-        <div class="row small-up-shiping">
-        
-          <div class="columns">
-            <label> Firstname * </label>
-            <input type="text" name="firstName" id="firstName" size="30" required/> 
-          </div>
-          <div class="columns">
-             <label> Lastname * </label>
-            <input type="text" name="lastName" id="lastName" size="30" required/>
-          </div>
-          
-          <div class="column">
-           <label> Address 1 * </label>
-            <input type="text" name="addressLine1" id="addressLine1" size="30" required/>
-          </div>
-          <div class="column">
-            <label> Address 2 </label>
-            <input type="text" name="addressLine2" id="addressLine2" size="30"/>
-          </div>
-          <div class="column">
-            <label> City * </label>
-            <input type="text" name="city" id="city" size="30" required/>
-          </div>
-          
-          <div class="column">
-            <label> Postcode / Zip code * </label>
-            <input type="text" name="postcode" id="postcode" size="30" required/>
-          </div>
-          
-          <div class="column">
-            <label> State/Province * </label>
-            <input type="text" name="state" id="state" size="30" required/>
-          </div>
-          
-          <div class="column">
-            <label> Country</label>
-            <input type="text" name="country" id="country" size="30"/>
-          </div>
-          
-           <div class="column">
-            <label> Phone Number</label>
-            <input type="text" name="phone" id="phone" size="30"/>
-          </div>
-          
-          
-           <div class="column">
-            <label> Email * </label>
-            <input type="email" name="email" id="email" size="30" required/>
-          </div>
-          
-          
-          <div class="column">
-            <input type="checkbox" name="same" id="same"/> My billing and shipping address are the same
-          </div>
-          
-        </div>
-        
-        <div class="row small-up-4">
-          
-          <div class="column">
-           
-          </div>
-        
-        </div>
-        
-        <hr>
-      
-      </div>
-      <div class="medium-6 large-5 columns">
-      
-      
-        <!--  <div class="login_in_shipping">
+        <%
+            double orderTotal = (Double) request.getAttribute("order_total");
+            //if(session.getAttribute("logged_in_customer")!=null) {
+            Customer c = (Customer) session.getAttribute("logged_in_customer");
+            String tax = request.getParameter("tax");
+        %>
     
-
         <div class="row">
-          <div class="small-3 columns">
-            <h4>Already have an account </h4>
-            <p> Login to check out using your saved details </p>
-            <label> Email * </label>
-            <input type="text" name="email" placeholder="Enter your email ID" size="40"/>   
-             <label> Password * </label>
-            <input type="password" name="password" placeholder="Enter your password" size="40"/>   
-           
-           <input type="submit" id="login_submit" value="Login"/>
-             
-          </div>
-          
-           
-       </div>
-      
-      </div> -->
-      
-           <h3>Already have an account </h3>
-        <p> Please login using saved details</p>
-
+            <!-- Billing Address Section -->
+            <div class="small-3 form"> 
+                <h2 class="text-center"> Billing Address </h2>
+                <input type="text" placeholder="First Name" name="firstName" id="firstName" required>
+                <input type="text" placeholder="Last Name" name="LastName" id="LastName" required>
+                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" required/> 
+                <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2"/> 
+                <input type="text" placeholder="City *" name="city" id="city" required/> 
+                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" required/> 
+                <input type="text" placeholder="State/County *" name="state" id="state" required/> 
+                <input type="text" placeholder="Country *" name="country" id="county" required/> 
+                <input type="text" placeholder="Phone number *" name="phoneNumber" id="phoneNumber" required/>
+                
+                <input type="checkbox" class="ba"/> Different from shipping address
+            </div>
+            <!-- END Billing Address Section -->
+            
+            <!-- Shipping Address Section -->
+            <div class="small-3 form"> 
+                <h2 class="text-center"> Shipping Address </h2>
+                <input type="text" placeholder="First Name" name="firstName" id="firstName" required>
+                <input type="text" placeholder="Last Name" name="LastName" id="LastName" required>
+                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" class="tex" required/> 
+                <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" class="tex"/> 
+                <input type="text" placeholder="City *" name="city" id="city" class="tex" required/> 
+                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" class="tex" required/> 
+                <input type="text" placeholder="State/County *" name="state" id="state" class="tex" required/> 
+                <input type="text" placeholder="Country *" name="country" id="county" class="tex" required/> 
+                <input type="text" placeholder="Phone number *" name="phoneNumber" id="phoneNumber" class="tex" required/>
+            </div>
+            <!-- END Shipping Address Section-->
+            
+        </div>
         <div class="row">
-        
-          <div class="small-3 columnsee">
-          
-          <!--     Email *
-             <input type="text" id="email" name="email" size="30"/> 
-             
-             Password *
-             <input type="password" id="password" name="password" size="30"/>  -->
-             <a href="/loginThroughCheckout?order_total=<%=orderTotal%>" class="button large expanded">Login</a>
-          </div>
-           
-       </div>
-
-          <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Tax </label>
-          </div>
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle" id="tax_label">$<%=tax%> </label>
-           </div>
-           
+            <div class="small-3 columns">
+                <label for="middle-label" class="middle">Tax </label>
+            </div>
+            <div class="small-3 columns">
+                <label for="middle-label" class="middle" id="tax_label">$<%=tax%> </label>
+            </div>
         </div>
     
         <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Order Total  </label>
-          </div>
-          <div class="small-3 columns">
-          
-            <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
-           </div>
-      
+            <div class="small-3 columns">
+                <label for="middle-label" class="middle">Order Total  </label>
+            </div>
+            <div class="small-3 columns">
+                <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
+            </div>
         </div>
-
-		<form action="checkoutProcess" id="checkout_form">
-		<input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
-        <input type="submit" class="button large expanded" value="Checkout"/>
-       </form>
-      </div> 
-      
-      
-      <br>
-      
-        <%-- <h3>Order Summary </h3>
-        <p> </p>
-
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Cart Total</label>
-          </div>
-          <div class="small-3 columns">
-             
-            <label for="middle-label" class="middle" id="cart_total_label">$<%=orderTotal %></label>
-           </div>
-           
-       </div>
-
-
-
-          <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">VAT </label>
-          </div>
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Applicable Tax </label>
-           </div>
-           
-        </div>
-    
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Order Total  </label>
-          </div>
-          <div class="small-3 columns">
-          
-            <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
-           </div>
-      
-        </div> --%>
-
-		  
-		<%-- <input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
-        <input type="submit" class="button large expanded" value="Checkout"/> --%>
-       
-      </div>  
-   
- </div>
- 	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
+        
+        <input type="submit" class="button large expanded" value="Checkout" />
+        
+    </form>
+        
+    <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
     <script src="js/update_cart.js"></script>
-    
     <script src="js/validations.js"></script>
-    <script>
-      $(document).foundation();
-    </script> 
-    
-   </form>
-  </body>
+    <script> $(document).foundation(); </script>
+</body>
+
 </html>
 
 
