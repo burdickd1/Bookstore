@@ -2,7 +2,7 @@
 <%@page import="com.qa.models.Customer"%>
 <html class="no-js" lang="en">
 <%
- 	request.setAttribute("pagetitle", "Account | Online Shopping");
+ 	request.setAttribute("pagetitle", "History | Online Shopping");
 	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
 	rd.include(request, response);
 %>
@@ -28,7 +28,7 @@
                 
               <form action="/updateAddress" method="post">
                <label>Address Line1 * </label>
-               <input type="text" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1" required/> 
+               <input type="text" placeholder="Enter AddressLine1" name="addressLine1" id="addressLine1" required/> 
                <label>Address Line2</label>
                <input type="text" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2"/> 
                <label>City * </label>
@@ -101,12 +101,13 @@
     
          
  
-    <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
+    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier2.js"></script>
     <script>
       $(document).foundation();
     </script>
+    <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
   </body>
 </html>
 
