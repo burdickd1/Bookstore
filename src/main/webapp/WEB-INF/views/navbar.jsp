@@ -23,7 +23,7 @@
         <div class="dropdown-content">
             <div class="dropdown-content-menu">
                 <ul>
-                    <li><a href="#account">Account</a></li>
+                    <li><a href="/profile">Account</a></li>
                     <li><a href="#history">Order History</a></li>
                     <li><a href="#password">Change Password</a></li>
                     <li><a href="/logout">Sign Out</a></li>
