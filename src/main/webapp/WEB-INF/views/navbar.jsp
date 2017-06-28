@@ -34,7 +34,7 @@
       </li> 
       <% } %>
 	  <li><a href="/viewCart" style="padding: 0px;"><i class="fi-shopping-cart navbar-icon" style="padding: 5px 8px;"></i></a></li>     
-      <li><form action="search" method="post" id="searchFrom"><input type="search" placeholder="Search" name="searchterm"></form></li>
+      <li><form action="search" method="post" id="searchFrom"><input type="search" placeholder="Search" name="searchterm" autofocus></form></li>
       <li><button type="button" class="button" onclick="$('#searchFrom').submit();">Search</button></li>
       <% if (session.getAttribute("logged_in_customer") == null) { %>
     	  <li><a href="/login"><span>Login</span>&nbsp|&nbsp<span>Register</span></a></li>
