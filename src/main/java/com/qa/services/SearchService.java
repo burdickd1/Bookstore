@@ -16,6 +16,10 @@ where MATCH (e_bookisbn, paperisbn, publisher, title, description)
 AGAINST ('+cras*' IN BOOLEAN MODE)
  */
 	
+/*
+
+ */
+	
 public static int distance(String a, String b){
 	a = a.toLowerCase();
 	b = b.toLowerCase();
