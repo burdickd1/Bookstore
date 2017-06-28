@@ -1,3 +1,4 @@
+SET SQL_SAFE_UPDATES=0;
 DELETE FROM `book_authors`
 WHERE book_book_id=1 OR authors_author_id=1;
 DELETE FROM `book_authors`
