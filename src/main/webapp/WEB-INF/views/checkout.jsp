@@ -225,6 +225,7 @@
       </div>  
    
  </div>
+ 	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
     <script src="js/update_cart.js"></script>
