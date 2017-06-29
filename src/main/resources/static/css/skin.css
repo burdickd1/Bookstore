@@ -88,7 +88,7 @@
 /* Index Header */
 
 .header {
-	height:400px;
+	height:600px;
     width:100%;
 	overflow: hidden;
 }
@@ -98,6 +98,12 @@ video {
     margin-top:-150px;
 }
 
+.hide-banner {
+    display:none;
+}
+.show-banner {
+    display:inline-block;
+}
 
 .ecommerce-product-slider .orbit-previous,
 .ecommerce-product-slider .orbit-next {

@@ -14,9 +14,13 @@
     Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
     Iterator<Book> it = books.iterator();
 %>
+    <aside id="banner-head" style="position:absolute; width:100%; height:600px" class="animated fadeIn hide-banner">
+        <h1>hello</h1>
+    </aside>
     <header class="header">
         <video preload="auto" autoplay loop muted poster="images/1" id="bgvid" src="videos/library.mp4" type="video/mp4" ></video>
     </header>
+
     <hr>
     <section>
         <div class="ecommerce-product-slider orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
