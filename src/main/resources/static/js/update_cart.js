@@ -1,9 +1,9 @@
 
-function calculateTotalPrice(price,oldQuantity, quantity,price_label)
+function calculateTotalPrice(price, quantity,price_label, id)
 {
-	var qChange = quantity-oldQuantity;
 	       var cartTotal = document.getElementById("cart_total").value;
-	      
+		   var oldQuantity = document.getElementById(id).value;
+			var qChange = quantity-oldQuantity;
 
 
 	       var totalPrice = parseFloat(price) * parseFloat(quantity);
@@ -26,7 +26,7 @@ function calculateTotalPrice(price,oldQuantity, quantity,price_label)
 	       document.getElementById("cart_total").value = cTotal;
 	       document.getElementById("order_total").value = oTotal;
 	       document.getElementById("tax").value = tax; 
-			document.getElementById("old_quant").value = quantity;
+			document.getElementById(id).value = quantity;
 
 
 	    

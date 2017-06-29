@@ -7,7 +7,7 @@
 <%@page import="com.qa.models.Customer"%>
 <html class="no-js" lang="en">
 <%
-    request.setAttribute("pagetitle", "Contact | Online Shopping");
+    request.setAttribute("pagetitle", "Checkout | Online Shopping");
     RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
     rd.include(request, response);
     double orderTotal = (Double) request.getAttribute("order_total");
