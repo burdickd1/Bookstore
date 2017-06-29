@@ -10,6 +10,6 @@
 	<link rel="stylesheet" href="css/skin.css"/>
 	<link rel="stylesheet" href="css/foundation-icons/foundation-icons.css"/>
 	<link rel="stylesheet" href="css/texts.css"/>
-	
+	<link rel="stylesheet" href="css/animate.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Bevan|Lora|Arvo|Oleo+Script" rel="stylesheet">
 </head>
