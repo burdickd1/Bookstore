@@ -146,11 +146,13 @@ public class HomeController {
 
 		if (c != null) {
 			System.out.println("Success");
+			
+			System.out.println("Customer: " + c);
 			modelAndView = new ModelAndView("index", "logged_in_customer", c);
 			Address a = addressService.findAddressByType(c.getCustomerId(), "billing");
 			
 			if(a != null) {
-				modelAndView = new ModelAndView("index", "Address", a);
+				modelAndView.addObject("Address", a);
 			}
 			
 		} else {
