@@ -8,6 +8,7 @@ public class Purchase {
 
 
     @Id
+    @GeneratedValue
     private int purchaseId;
 
 	private int bookIdPurchase;
@@ -20,10 +21,6 @@ public class Purchase {
 
     public int getPurchaseId() {
         return purchaseId;
-    }
-
-    public void setPurchaseId(int purchaseId) {
-        this.purchaseId = purchaseId;
     }
 
     public int getBookIdPurchase() {
