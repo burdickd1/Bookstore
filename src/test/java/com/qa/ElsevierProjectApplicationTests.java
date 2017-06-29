@@ -28,6 +28,7 @@ public class ElsevierProjectApplicationTests {
 	ArrayList<Integer> bookIds;
 	int bookId;
 	Book b0, b1, b2, b3, b4;
+	Map<Integer, Integer> map;
 	
 	@Before
 	public void setUp() {
@@ -50,9 +51,15 @@ public class ElsevierProjectApplicationTests {
 		
 		cartItems = new ArrayList<Book>(Arrays.asList(b0, b2));
 		cartItemIds = new ArrayList<Integer>(Arrays.asList(0, 2));
-		books = new ArrayList<Book>(Arrays.asList(b0, b1, b2, b3, b4));
-		bookIds = new ArrayList<Integer>(Arrays.asList(0, 1, 2, 3, 4));
+		books = new ArrayList<Book>(Arrays.asList(b0, b1, b2, b3, b4, b2));
+		bookIds = new ArrayList<Integer>(Arrays.asList(0, 1, 2, 3, 4, 2));
 		
+		map = new HashMap<Integer, Integer>();
+		map.put(0, 1);
+		map.put(1, 1);
+		map.put(2, 2);
+		map.put(3, 1);
+		map.put(4, 1);
 		
 	}
 	
@@ -81,14 +88,18 @@ public class ElsevierProjectApplicationTests {
 	@Test
 	public void testRemoveBookById() {
 		bookId = 3;
-		ArrayList<Book> test = new ArrayList(Arrays.asList(b0, b1, b2, b4));
+		ArrayList<Book> test = new ArrayList(Arrays.asList(b0, b1, b2, b4, b2));
 		assertEquals(bc.removeBookById(books, bookId), test);	
 	}
 	
 	@Test
 	public void testBookCounts() {
-		//Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		
+		assertEquals(bc.bookCounts(bookIds), map);
+	}
+	
+	@Test
+	public void testFilteredBookList() {
+		assertEquals(bc.filteredBookList(books, map), books);
 	}
 
 }
