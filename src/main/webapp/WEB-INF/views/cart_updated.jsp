@@ -13,6 +13,8 @@
         <h1>Item added to cart </h1>
         
         <a href="/" class="button large">Back to Items </a>
+         <h2 class="text-center form-break">--&nbsp;OR&nbsp;--<br></h2>
+		  <a href="/register" class="button large">Go to Cart</a>
       
       </div>
     </div>
