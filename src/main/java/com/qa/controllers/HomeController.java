@@ -9,7 +9,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import com.qa.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,11 +22,13 @@ import com.qa.models.Address;
 import com.qa.models.Author;
 import com.qa.models.Book;
 import com.qa.models.Customer;
+import com.qa.models.PaymentInfo;
 import com.qa.models.Purchase;
 import com.qa.services.AddressService;
 import com.qa.services.BookService;
 import com.qa.services.CustomerService;
 import com.qa.services.OrderService;
+import com.qa.services.PaymentService;
 
 @Controller
 @SessionAttributes(names = { "books", "cart_items", "logged_in_customer", "Address" })
@@ -45,7 +46,8 @@ public class HomeController {
 	@Autowired
 	OrderService orderService;
 
-
+	@Autowired 
+	PaymentService paymentService;
 
 
 	@RequestMapping("/")
@@ -304,4 +306,21 @@ public class HomeController {
 
 		return modelAndView;
 	}
+	
+	@RequestMapping("/paymentProcess")
+	public ModelAndView paymentProcess(@ModelAttribute("payment") PaymentInfo payment,
+			@ModelAttribute("logged_in_customer") Customer customer) {
+
+		ModelAndView modelAndView = null;
+		payment.setCustomerId(customer.getCustomerId());
+		payment.setAddressId(customer.getCustomerId());
+		PaymentInfo p = paymentService.save(payment);
+		System.out.println("Purchase: " + p);
+			System.err.println("CHICKEKKENNENENN");
+			modelAndView = new ModelAndView("redirect:orderHistory");
+
+
+		return modelAndView;
+	}
+	
 }

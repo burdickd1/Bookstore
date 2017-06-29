@@ -151,7 +151,7 @@
 		<form action="/checkout" method="post" id="checkout_form">
 		<input type="hidden" name="tax" value="<%=tax %>"/>
 		<input type="hidden" name="cart_total" value="<%=cartTotal %>"/>  
-		<input type="hidden" name="order_total" value="<%=totalCost %>"/>   
+		<input type="hidden" name="order_total" value="<%=totalCost %>"/>
         <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
         </form> 
       </div>  

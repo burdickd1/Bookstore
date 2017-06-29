@@ -8,6 +8,7 @@ public class Purchase {
 
 
     @Id
+    @GeneratedValue
     private int purchaseId;
 
 	private int bookIdPurchase;
