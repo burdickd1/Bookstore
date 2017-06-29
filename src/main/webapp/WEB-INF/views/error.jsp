@@ -15,7 +15,7 @@
 		</div>
 	<div class="small-6 columns form">
 		<h2 class="text-center"><b>Keyboard Not Found</b></b><br/>
-			<span style="font-size: 20px;">Please Press a Key to Continue...</span></h2>
+			<span style="font-size: 20px;">Please Press a Key to Continue...</span></h2><br>
 		<div align="center"><img alt="O noes!" src="/images/errorz.jpg"></div><br>
 	</div>
 	<div class="small-3 columns"></div>
