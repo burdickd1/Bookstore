@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.qa.models.Address;
 import com.qa.models.Book;
 import com.qa.models.Customer;
 import com.qa.models.Purchase;
+import com.qa.services.AddressService;
 import com.qa.services.BookService;
 import com.qa.services.CustomerService;
 import com.qa.services.OrderService;
@@ -34,6 +36,9 @@ public class HomeController {
 
 	@Autowired
 	CustomerService customerService;
+	
+	@Autowired
+	AddressService addressService;
 
 	@Autowired
 	OrderService orderService;
@@ -137,6 +142,12 @@ public class HomeController {
 		if (c != null) {
 			System.out.println("Success");
 			modelAndView = new ModelAndView("index", "logged_in_customer", c);
+			Address a = addressService.findAddressByType(c.getCustomerId(), "billing");
+			
+			if(a != null) {
+				modelAndView = new ModelAndView("index", "Address", a);
+			}
+			
 		} else {
 			System.out.println("Failure");
 			modelAndView = new ModelAndView("login");
