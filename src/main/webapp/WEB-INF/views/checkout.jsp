@@ -20,9 +20,9 @@
     <form action="/checkoutProcess" method="post">
 
         <%
-            if(session.getAttribute("logged_in_customer")!=null) {
-            Customer c = (Customer) session.getAttribute("logged_in_customer");
-            Address a = (Address) session.getAttribute("Address");
+            if( (session.getAttribute("logged_in_customer")!=null) && (session.getAttribute("Address")!=null) ) {
+                Customer c = (Customer) session.getAttribute("logged_in_customer");
+                Address a = (Address) session.getAttribute("Address");
         %>
     
         <div class="row">
