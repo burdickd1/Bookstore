@@ -14,7 +14,7 @@
         
         <a href="/" class="button large">Back to Items </a>
          <h2 class="text-center form-break">--&nbsp;OR&nbsp;--<br></h2>
-		  <a href="/register" class="button large">Go to Cart</a>
+		  <a href="/viewCart" class="button large">Go to Cart</a>
       
       </div>
     </div>
