@@ -36,7 +36,7 @@
         <div class="small-3 form">
            <h2 class="text-center"> Billing Address </h2>
 
-              <form action="/updateAddress" method="post">
+              <form action="/updateAddress" method="post" modelAttribute="address">
                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" value="<%=billingAddress.getAddressLine1()%>" autocomplete="off" required/>
                <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" value="<%=billingAddress.getAddressLine2()%>" autocomplete="off" />
                 <input type="text" placeholder="City *" name="city" id="city" value="<%=billingAddress.getCity()%>" autocomplete="off" required/>
@@ -56,14 +56,14 @@
                 
                 <input type="checkbox" class="ba" checked="checked" /> Different from billing address
                 
-              <form action="/updateAddress" method="post">
-               	<input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" class="tex" required/> 
-              	<input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" class="tex"/> 
-                <input type="text" placeholder="City *" name="city" id="city" class="tex" required/> 
-                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" class="tex" required/> 
-                <input type="text" placeholder="State/County *" name="state" id="state" class="tex" required/> 
-                <input type="text" placeholder="Country *" name="country" id="county" class="tex" required/> 
-                <input type="text" placeholder="Phone number *" name="phoneNumber" id="phoneNumber" class="tex" required/> 
+              <form action="/updateAddress" method="post" modelAttribute="address">
+               	<input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" value="<%=shippingAddress.getAddressLine1()%>" autocomplete="off" required/>
+                <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" value="<%=shippingAddress.getAddressLine2()%>" autocomplete="off" />
+                <input type="text" placeholder="City *" name="city" id="city" value="<%=shippingAddress.getCity()%>" autocomplete="off" required/>
+                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" value="<%=shippingAddress.getPostcode()%>" autocomplete="off" required/>
+                <input type="text" placeholder="State/County *" name="state" id="state" value="<%=shippingAddress.getState()%>" autocomplete="off" required/>
+                <input type="text" placeholder="Country *" name="country" id="county" value="<%=shippingAddress.getCountry()%>" autocomplete="off" required/>
+                <input type="text" placeholder="Phone number *" name="phoneNumber" id="phoneNumber" value="<%=shippingAddress.getPhoneNumber()%>" autocomplete="off" required/>
                 <input type="hidden" name="addressType" id="addressType" value="shipping"/> 
 
                 <input type="submit" class="button create account expanded" value="Update Shipping Address">

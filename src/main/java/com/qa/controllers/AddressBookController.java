@@ -12,6 +12,7 @@ import com.qa.models.Customer;
 import com.qa.services.AddressService;
 
 @Controller
+@SessionAttributes(names = { "logged_in_customer" })
 public class AddressBookController {
 
 	@Autowired
@@ -19,16 +20,31 @@ public class AddressBookController {
 
 	@RequestMapping("/updateAddress")
 	public ModelAndView updateAddress(@ModelAttribute("logged_in_customer") Customer loggedInCustomer,
-			@ModelAttribute("Address") Address address) {
+			@ModelAttribute Address address) {
 
 		ModelAndView modelAndView = null;
 
-		Address billingAddress = null;
-		Address shippingAddress = null;
-
 		Address bAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
-
 		Address sAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
+
+		Address new_billing = null;
+		Address new_shipping = null;
+
+		if (bAddress == null) {
+			new_billing = new Address();
+			new_billing.validate();
+			new_billing.setAddressType("billing");
+			new_billing.setCustomerId(loggedInCustomer.getCustomerId());
+			addressService.save(new_billing);
+		}
+
+		if (sAddress == null) {
+			new_shipping = new Address();
+			new_shipping.validate();
+			new_shipping.setAddressType("shipping");
+			new_shipping.setCustomerId(loggedInCustomer.getCustomerId());
+			addressService.save(new_shipping);
+		}
 
 		if (bAddress != null || sAddress != null) {
 
@@ -37,11 +53,11 @@ public class AddressBookController {
 					address.getCountry(), address.getPhoneNumber(), loggedInCustomer.getCustomerId(),
 					address.getAddressType());
 
+			Address billingAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
+			Address shippingAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
+
 			if (recordsUpdated > 0) {
-				billingAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
-				shippingAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
-				System.out.println("test+ " +  billingAddress.toString());
-				modelAndView = new ModelAndView("address_book", "billing_address", billingAddress);
+				modelAndView = new ModelAndView("redirect:updateAddress", "billing_address", billingAddress);
 				modelAndView.addObject("shipping_address", shippingAddress);
 			} else {
 				modelAndView = new ModelAndView("address_book", "billing_address", billingAddress);
@@ -50,10 +66,8 @@ public class AddressBookController {
 			}
 
 		} else {
-			address.setCustomerId(loggedInCustomer.getCustomerId());
-			Address savedAddress = addressService.save(address);
-			modelAndView = new ModelAndView("address_book", "billing_address", savedAddress);
-
+			modelAndView = new ModelAndView("address_book", "billing_address", new_billing);
+			modelAndView.addObject("shipping_address", new_shipping);
 		}
 
 		return modelAndView;

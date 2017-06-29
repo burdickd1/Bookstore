@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.qa.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,9 +19,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.qa.models.Book;
-import com.qa.models.Customer;
-import com.qa.models.Purchase;
 import com.qa.services.BookService;
 import com.qa.services.CustomerService;
 import com.qa.services.OrderService;
@@ -37,6 +35,9 @@ public class HomeController {
 
 	@Autowired
 	OrderService orderService;
+
+
+
 
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request) {
