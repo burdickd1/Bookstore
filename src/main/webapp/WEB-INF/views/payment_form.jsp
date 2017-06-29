@@ -44,9 +44,9 @@
         <div class="row small-up-shiping">
         
           <div class="columns">
-            <input type="text" name="card" id="card" size="30" placeholder="Card Number *"/>
-            <input type="text" name="expireDate" id="expireDate" size="30" placeholder="Expiration Date *"/>
-            <input type="text" name="cvv" id="cvv" size="30" placeholder="CVV *"/>
+            <input type="number" name="card" id="card" size="30" placeholder="Card Number *" required/>
+            <input type="date" name="expireDate" id="expireDate" size="30" placeholder="Expiration Date *" required/>
+            <input type="number" name="cvv" id="cvv" size="30" placeholder="CVV *" required/>
             <br>
             <h2 class="text-center">Order Summary </h2>
             <label for="middle-label" class="middle">Cart Total: &nbsp&nbsp&nbsp&nbsp $<%=cartS %></label>
