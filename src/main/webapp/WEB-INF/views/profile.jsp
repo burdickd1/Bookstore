@@ -36,11 +36,11 @@
         <form action="/updateProfile" method="post">
            <h2 class="text-center"> Account details </h2>
            <label>Firstname * </label>
-           <input type="text" placeholder="Enter firstname" name="firstName" id="firstName" value="<%=c.getFirstName() %>"/> 
+           <input type="text" placeholder="Enter firstname" name="firstName" id="firstName" value="<%=c.getFirstName() %>" required/> 
            <label>Lastname * </label>
-           <input type="text" placeholder="Enter lastname" name="lastName" id="lastName" value="<%=c.getLastName()%>"/> 
+           <input type="text" placeholder="Enter lastname" name="lastName" id="lastName" value="<%=c.getLastName()%>" required/> 
            <label>Email ID * </label>
-           <input type="text" placeholder="Enter email" name="email" id="email" value="<%=c.getEmail()%>"/> 
+           <input type="text" placeholder="Enter email" name="email" id="email" value="<%=c.getEmail()%>" required/> 
          </form> 
          <input type="submit" class="button create account expanded" value="Update Account">   
          </div>
