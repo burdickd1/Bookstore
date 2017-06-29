@@ -61,6 +61,13 @@ public class Author {
 	public void setExpertise(String expertise) {
 		this.expertise = expertise;
 	}
+
+	@Override
+	public String toString() {
+		return "Author [authorId=" + authorId + ", authorName=" + authorName
+				+ ", aboutAuthor=" + aboutAuthor + ", affiliations="
+				+ affiliations + ", expertise=" + expertise + "]";
+	}
 	
 	
 }

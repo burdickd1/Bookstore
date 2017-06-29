@@ -30,9 +30,9 @@
 
     <div class="row">
  
-      <div class="medium-6 columns">
+      <div class="medium-12 columns form">
       
-       <h2> Payment Details  </h2>
+       <h2 class="text-center"> Payment Details  </h2>
         
         <div class="row small-up-shiping">
         
@@ -42,38 +42,17 @@
             <input type="text" name="addressLine1" id="addressLine1" size="30" placeholder="Address 1 *"/>
             <input type="text" name="addressLine2" id="addressLine2" size="30" placeholder="Address 2"/>
             <input type="text" name="city" id="city" size="30" placeholder="City *"/>
-          </div>
-          
-       <!--    <div class="column">
-            <label> Postcode / Zip code * </label>
-            <input type="text" name="postcode" id="postcode" size="30"/>
-          </div>
-          
-          <div class="column">
-            <label> State/Province * </label>
-            <input type="text" name="state" id="state" size="30"/>
-          </div> -->
-          
-   <!--        <div class="column">
-            <label> Country</label>
-            <input type="text" name="country" id="country" size="30"/>
-          </div>
-          
-           <div class="column">
-            <label> Phone Number</label>
-            <input type="text" name="phone" id="phone" size="30"/>
-          </div>
-          
-          
-           <div class="column">
-            <label> Email * </label>
-            <input type="text" name="email" id="email" size="30"/>
+            <input type="text" name="postcode" id="postcode" size="30" placeholder="Postcode *"/>
+            <input type="text" name="state" id="state" size="30" placeholder="State *"/>
+            <input type="text" name="country" id="country" size="30" placeholder="Country *"/>
+            <input type="text" name="phone" id="phone" size="30" placeholder="Phone Number *"/>
+            <input type="text" name="email" id="email" size="30" placeholder="Email *"/>
           </div>
           
           
           <div class="column">
-            <input type="checkbox" name="same" id="same"/> My billing and shipping address are the same
-          </div> -->
+            
+          </div>
           
         </div>
         
@@ -88,8 +67,8 @@
         <hr>
       
       </div>
-      <div class="medium-6 large-5 columns">
-        <%-- <h3>Order Summary </h3>
+      <div class="medium-12 large-12 columns form">
+        <h2 class="text-center">Order Summary </h2>
         <p> </p>
 
         <div class="row">
@@ -129,7 +108,6 @@
 		  
 		<input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
         <input type="submit" class="button large expanded" value="Checkout"/>
-        --%>
       </div>  
    
  </div>
