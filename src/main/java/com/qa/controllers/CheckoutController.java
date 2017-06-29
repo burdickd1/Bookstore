@@ -32,7 +32,8 @@ public class CheckoutController {
 
 	@RequestMapping("/loginThroughCheckout")
 	public ModelAndView loginThroughCheckout(@ModelAttribute("book_counts") Map<Integer, Integer> bookCounts,
-			@RequestParam("order_total") double orderTotal) {
+			@RequestParam("order_total") double orderTotal,
+			@RequestParam("tax") double tax){
 
 		ModelAndView modelAndView = new ModelAndView("login_through_checkout", "order_total", orderTotal);
 

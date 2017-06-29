@@ -108,6 +108,7 @@
                 <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
 		        <input type="hidden" name="tax"value="<%=tax%>"/>
 		        <input type="submit" class="button expanded" value="Checkout" />
+		         <h2 class="text-center form-break">--&nbsp;OR&nbsp;--<br></h2>
             </div>
         </div>
         
