@@ -54,7 +54,7 @@
                <div class="small-3 form">
                 <h2 class="text-center"> Shipping Address </h2>
                 
-                <input type="checkbox" class="ba" checked="checked" /> Different from billing address
+              
                 
               <form action="/updateAddress" method="post" modelAttribute="address">
                	<input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" value="<%=shippingAddress.getAddressLine1()%>" autocomplete="off" required/>
