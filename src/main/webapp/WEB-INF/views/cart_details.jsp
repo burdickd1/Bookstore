@@ -33,7 +33,6 @@
     bookCounts = (Map<Integer,Integer>)  session.getAttribute("book_counts");
     
     double cartTotal = 0.0;
-    
     double totalPrice =  0.0;
     %>
     
@@ -54,9 +53,9 @@
     	  
     	  int quantity = bookCounts.get(book.getBookId());
     	  double price = book.getPrice();
-    	  totalPrice = book.getPrice() * quantity;
-    	  cartTotal = cartTotal + book.getPrice()*quantity;
-
+          double bookTotal = book.getPrice() * quantity;
+    	  cartTotal += bookTotal;
+          totalPrice += bookTotal;
       %>
        
         <img class="thumbnail" style="width: 200px; height 250px;" src="<%=book.getBookImage()%>"/>
@@ -80,7 +79,7 @@
             <form name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
-            	Price:<label id="price_label<%=i%>">$<%=totalPrice%></label>
+            	Price:<label id="price_label<%=i%>">$<%=price%></label>
             	<input type="hidden" name="cart_total" value="<%=price%>"/>
                 <input type ="hidden" id ="old_quant"<%=i%> name="old_quant" value = "1" />
             	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value, this.value,price_label<%=i%>, old_quant.id)"/>
@@ -107,8 +106,7 @@
       totalPrice = Double.parseDouble(orderS);
       double tax = cartTotal*.1;
       String taxS = String.format("%.2f", tax);
-      tax = Double.parseDouble(taxS);
-      double totalCost = cartTotal + tax;
+      double totalCost = totalPrice + tax;
       %>
      
       </div>
@@ -121,8 +119,8 @@
             <label for="middle-label" class="middle">Cart Total</label>
           </div>
           <div class="small-3 columns">
-             <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/> 
-            <label for="middle-label" class="middle" id="cart_total_label">$<%=cartS %></label>
+             <input type="hidden" name="cart_total" id="cart_total" value="<%=cartTotal %>"/>
+            <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %></label>
            </div>
            
        </div>
@@ -144,16 +142,16 @@
             <label for="middle-label" class="middle">Order Total  </label>
           </div>
           <div class="small-3 columns">
-            <input type="hidden" name="order_total" id="order_total" value="<%=totalCost %>"/> 
-            <label for="middle-label" class="middle" id="order_total_label">$<%=orderS%></label>
+            <input type="hidden" name="order_total" id="order_total" value="<%=totalCost %>"/>
+            <label for="middle-label" class="middle" id="order_total_label">$<%=totalCost %></label>
            </div>
       
         </div>
 
 		<form action="/checkout" method="post" id="checkout_form">
-		<input type="hidden" name="tax" value="<%=taxS %>"/>
-		<input type="hidden" name="cart_total" value="<%=cartS %>"/>  
-		<input type="hidden" name="order_total" value="<%=orderS %>"/>   
+		<input type="hidden" name="tax" value="<%=tax %>"/>
+		<input type="hidden" name="cart_total" value="<%=cartTotal %>"/>  
+		<input type="hidden" name="order_total" value="<%=totalCost %>"/>   
         <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
         </form> 
       </div>  

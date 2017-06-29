@@ -11,9 +11,15 @@
     request.setAttribute("pagetitle", "Checkout | Online Shopping");
     RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
     rd.include(request, response);
-    Double orderTotal = (Double) request.getAttribute("order_total");
-    String cartTotal = (String) request.getAttribute("cart_total");
-    String tax = request.getParameter("tax");
+
+    Double orderTotal = (Double) request.getAttribute("order_total"); 
+    Double cartTotal = (Double) request.getAttribute("cart_total");
+    Double tax = (Double) request.getAttribute("tax");
+    String orderS = String.format("%.2f", orderTotal);
+    String taxS= String.format("%.2f",tax);
+    String cartS = String.format("%.2f", cartTotal);
+    System.out.println("tax value " + tax);
+    System.out.println("tax string = " + taxS);
 %>
   <body>
     <jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
@@ -30,14 +36,14 @@
             <!-- Billing Address Section -->
             <div class="small-3 form"> 
                 <h2 class="text-center"> Billing Address </h2>
-                <input type="text" name="firstName" id="firstName" value="<%= c.getFirstName() %>" />
-                <input type="text" placeholder="Last Name" name="LastName" id="LastName" value="<%= c.getLastName() %>" />
-                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" value=" <%= a.getAddressLine1() %> " /> 
+                <input type="text" name="firstName" id="firstName" value="<%= c.getFirstName() %>" required/>
+                <input type="text" placeholder="Last Name" name="LastName" id="LastName" value="<%= c.getLastName() %>" required/>
+                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" value=" <%= a.getAddressLine1() %> " required/> 
                 <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" value=" <%= a.getAddressLine2() %> " /> 
-                <input type="text" placeholder="City *" name="city" id="city" value=" <%= a.getCity() %> " /> 
-                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" value=" <%= a.getPostcode() %> "/> 
-                <input type="text" placeholder="State/County *" name="state" id="state" value=" <%= a.getState() %> " /> 
-                <input type="text" placeholder="Country *" name="country" id="country" value=" <%= a.getCountry() %> " />
+                <input type="text" placeholder="City *" name="city" id="city" value=" <%= a.getCity() %> " required/> 
+                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" value=" <%= a.getPostcode() %> " required/> 
+                <input type="text" placeholder="State/County *" name="state" id="state" value=" <%= a.getState() %> " required/> 
+                <input type="text" placeholder="Country *" name="country" id="country" value=" <%= a.getCountry() %> " required/>
                 
                 <input type="checkbox" name="sameAddressBox" id="sameAddressBox" onChange="showDiv()" checked/> Same as shipping address.
             </div>
@@ -61,10 +67,11 @@
         
         <div class="row">
             <div class="small-3 form">
-                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=tax%></label>
-                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal%></label>
-                <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
+                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=taxS%></label>
+                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderS%></label>
+                 <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
 		        <input type="hidden" name="tax"value="<%=tax%>"/>
+		        <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
 		        <input type="submit" class="button expanded" value="Checkout" />
             </div>
         </div>
@@ -106,10 +113,11 @@
         
         <div class="row">
             <div class="small-3 form">
-                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=tax%></label>
-                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal%></label>
+                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=taxS%></label>
+                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderS%></label>
                 <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
 		        <input type="hidden" name="tax"value="<%=tax%>"/>
+		        <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
 		        <input type="submit" class="button expanded" value="Checkout" />
 		        <!-- <h2 class="text-center form-break">--&nbsp;OR&nbsp;--<br></h2> -->
             </div>

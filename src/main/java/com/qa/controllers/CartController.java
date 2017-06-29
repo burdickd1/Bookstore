@@ -26,9 +26,13 @@ public class CartController {
 
 	@RequestMapping("/checkout")
 	public ModelAndView checkoutForm(@ModelAttribute("book_counts") Map<Integer, Integer> bookCounts,
-			@RequestParam("order_total") double orderTotal) {
+			@RequestParam("order_total") double orderTotal,
+			@RequestParam("cart_total") double cartTotal,
+			@RequestParam("tax") double tax){
 
 		ModelAndView modelAndView = new ModelAndView("checkout", "order_total", orderTotal);
+		modelAndView.addObject("cart_total", cartTotal);
+		modelAndView.addObject("tax", tax);
 		modelAndView.addObject("book_counts", bookCounts);
 		return modelAndView;
 
