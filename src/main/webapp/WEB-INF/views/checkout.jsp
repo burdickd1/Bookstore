@@ -11,6 +11,7 @@
     request.setAttribute("pagetitle", "Checkout | Online Shopping");
     RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
     rd.include(request, response);
+
     Double orderTotal = (Double) request.getAttribute("order_total"); 
     Double cartTotal = (Double) request.getAttribute("cart_total");
     Double tax = (Double) request.getAttribute("tax");

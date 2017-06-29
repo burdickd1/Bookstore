@@ -8,8 +8,18 @@
 	rd.include(request, response);
 %>
 <body>
-	<h1 align="center">Keyboard Not Found<br/><br/>
-		Please Press a Key to Continue</h1>
-	<div align="center"><img alt="O noes!" src="/images/errorz.jpg"></div>
+	<jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
+	<div class="row">
+	<div class="small-3 columns">
+		<p></p>
+		</div>
+	<div class="small-6 columns form">
+		<h2 class="text-center"><b>Keyboard Not Found</b></b><br/>
+			<span style="font-size: 20px;">Please Press a Key to Continue...</span></h2><br>
+		<div align="center"><img alt="O noes!" src="/images/errorz.jpg"></div><br>
+	</div>
+	<div class="small-3 columns"></div>
+	</div>
+	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
 </html>
