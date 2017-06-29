@@ -13,7 +13,7 @@
   <body>
 	<jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
     
-    <form action="/checkoutProcess" method="post">
+    <form action="/order_history" method="post">
     
     
     <%
@@ -21,6 +21,9 @@
     double orderTotal = (Double) request.getAttribute("order_total");
     double cartTotal = (Double) request.getAttribute("cart_total");
     double tax = (Double) request.getAttribute("tax");
+    String taxS= String.format("%.2f",tax);
+    String cartS = String.format("%.2f", cartTotal);
+    String orderS = String.format("%.2f", orderTotal);
     
    
     %>
@@ -46,9 +49,9 @@
             <input type="text" name="cvv" id="cvv" size="30" placeholder="CVV *"/>
             <br>
             <h2 class="text-center">Order Summary </h2>
-            <label for="middle-label" class="middle">Cart Total: &nbsp&nbsp&nbsp&nbsp $<%=cartTotal %></label>
-            <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=tax %></label>
-            <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal%> </label>
+            <label for="middle-label" class="middle">Cart Total: &nbsp&nbsp&nbsp&nbsp $<%=cartS %></label>
+            <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=taxS %></label>
+            <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderS%> </label>
             <input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
         	<input type="submit" class="button large expanded" value="Checkout"/>
           </div>          

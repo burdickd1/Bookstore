@@ -11,9 +11,14 @@
     request.setAttribute("pagetitle", "Checkout | Online Shopping");
     RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
     rd.include(request, response);
-    String orderTotal = (String) request.getAttribute("order_total");
-    String cartTotal = (String) request.getAttribute("cart_total");
-    String tax = request.getParameter("tax");
+    Double orderTotal = (Double) request.getAttribute("order_total"); 
+    Double cartTotal = (Double) request.getAttribute("cart_total");
+    Double tax = (Double) request.getAttribute("tax");
+    String orderS = String.format("%.2f", orderTotal);
+    String taxS= String.format("%.2f",tax);
+    String cartS = String.format("%.2f", cartTotal);
+    System.out.println("tax value " + tax);
+    System.out.println("tax string = " + taxS);
 %>
   <body>
     <jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
@@ -62,7 +67,7 @@
         <div class="row">
             <div class="small-3 form">
                 <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=tax%></label>
-                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal%></label>
+                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderS%></label>
                 <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
 		        <input type="hidden" name="tax"value="<%=tax%>"/>
 		        <input type="submit" class="button expanded" value="Checkout" />
@@ -106,10 +111,11 @@
         
         <div class="row">
             <div class="small-3 form">
-                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=tax%></label>
-                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal%></label>
+                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=taxS%></label>
+                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderS%></label>
                 <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
 		        <input type="hidden" name="tax"value="<%=tax%>"/>
+		        <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
 		        <input type="submit" class="button expanded" value="Checkout" />
 		        <!-- <h2 class="text-center form-break">--&nbsp;OR&nbsp;--<br></h2> -->
             </div>

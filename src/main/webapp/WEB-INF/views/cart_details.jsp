@@ -107,7 +107,6 @@
       totalPrice = Double.parseDouble(orderS);
       double tax = cartTotal*.1;
       String taxS = String.format("%.2f", tax);
-      tax = Double.parseDouble(taxS);
       double totalCost = cartTotal + tax;
       %>
      
@@ -151,9 +150,9 @@
         </div>
 
 		<form action="/checkout" method="post" id="checkout_form">
-		<input type="hidden" name="tax" value="<%=taxS %>"/>
-		<input type="hidden" name="cart_total" value="<%=cartS %>"/>  
-		<input type="hidden" name="order_total" value="<%=orderS %>"/>   
+		<input type="hidden" name="tax" value="<%=tax %>"/>
+		<input type="hidden" name="cart_total" value="<%=cartTotal %>"/>  
+		<input type="hidden" name="order_total" value="<%=totalCost %>"/>   
         <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
         </form> 
       </div>  
