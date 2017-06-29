@@ -5,6 +5,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
 <%@page import="com.qa.models.Customer"%>
+<%@page import="com.qa.models.Address"%>
 <html class="no-js" lang="en">
 <%
     request.setAttribute("pagetitle", "Checkout | Online Shopping");
@@ -21,6 +22,7 @@
         <%
             if(session.getAttribute("logged_in_customer")!=null) {
             Customer c = (Customer) session.getAttribute("logged_in_customer");
+            Address a = (Address) session.getAttribute("Address");
         %>
     
         <div class="row">
@@ -29,12 +31,12 @@
                 <h2 class="text-center"> Billing Address </h2>
                 <input type="text" name="firstName" id="firstName" value="<%= c.getFirstName() %>" />
                 <input type="text" placeholder="Last Name" name="LastName" id="LastName" value="<%= c.getLastName() %>" />
-                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" value="" /> 
-                <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" value="" /> 
-                <input type="text" placeholder="City *" name="city" id="city" value="" /> 
-                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" value=""/> 
-                <input type="text" placeholder="State/County *" name="state" id="state" value="" /> 
-                <input type="text" placeholder="Country *" name="country" id="country" value="" />
+                <input type="text" placeholder="Address 1 *" name="addressLine1" id="addressLine1" value=" <%= a.getAddressLine1() %> " /> 
+                <input type="text" placeholder="Address 2" name="addressLine2" id="addressLine2" value=" <%= a.getAddressLine2() %> " /> 
+                <input type="text" placeholder="City *" name="city" id="city" value=" <%= a.getCity() %> " /> 
+                <input type="text" placeholder="Postcode *" name="postcode" id="postcode" value=" <%= a.getPostcode() %> "/> 
+                <input type="text" placeholder="State/County *" name="state" id="state" value=" <%= a.getState() %> " /> 
+                <input type="text" placeholder="Country *" name="country" id="country" value=" <%= a.getCountry() %> " />
                 
                 <input type="checkbox" name="sameAddressBox" id="sameAddressBox" onChange="showDiv()" checked/> Same as shipping address.
             </div>

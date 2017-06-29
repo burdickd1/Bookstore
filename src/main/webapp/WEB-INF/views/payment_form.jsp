@@ -29,52 +29,27 @@
     <!-- You can now combine a row and column if you just need a 12 column row -->
 
     <div class="row">
- 
-      <div class="medium-6 columns">
+ 	  <div class="small-3 columns">
+		<p></p>
+	  </div>
+      <div class="small-6 columns form">
       
-       <h2> Payment Details  </h2>
+       <h2 class="text-center"> Payment Details  </h2>
         
         <div class="row small-up-shiping">
         
           <div class="columns">
-            <input type="text" name="firstName" id="firstName" size="30" placeholder="Firstname *"/> 
-            <input type="text" name="lastName" id="lastName" size="30" placeholder="Lastname *"/>
-            <input type="text" name="addressLine1" id="addressLine1" size="30" placeholder="Address 1 *"/>
-            <input type="text" name="addressLine2" id="addressLine2" size="30" placeholder="Address 2"/>
-            <input type="text" name="city" id="city" size="30" placeholder="City *"/>
-          </div>
-          
-       <!--    <div class="column">
-            <label> Postcode / Zip code * </label>
-            <input type="text" name="postcode" id="postcode" size="30"/>
-          </div>
-          
-          <div class="column">
-            <label> State/Province * </label>
-            <input type="text" name="state" id="state" size="30"/>
-          </div> -->
-          
-   <!--        <div class="column">
-            <label> Country</label>
-            <input type="text" name="country" id="country" size="30"/>
-          </div>
-          
-           <div class="column">
-            <label> Phone Number</label>
-            <input type="text" name="phone" id="phone" size="30"/>
-          </div>
-          
-          
-           <div class="column">
-            <label> Email * </label>
-            <input type="text" name="email" id="email" size="30"/>
-          </div>
-          
-          
-          <div class="column">
-            <input type="checkbox" name="same" id="same"/> My billing and shipping address are the same
-          </div> -->
-          
+            <input type="text" name="card" id="card" size="30" placeholder="Card Number *"/>
+            <input type="text" name="expireDate" id="expireDate" size="30" placeholder="Expiration Date *"/>
+            <input type="text" name="cvv" id="cvv" size="30" placeholder="CVV *"/>
+            <br>
+            <h2 class="text-center">Order Summary </h2>
+            <label for="middle-label" class="middle">Cart Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal %></label>
+            <label for="middle-label" class="middle">VAT: &nbsp&nbsp&nbsp&nbsp Applicable Tax</label>
+            <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal%> </label>
+            <input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
+        	<input type="submit" class="button large expanded" value="Checkout"/>
+          </div>          
         </div>
         
         <div class="row small-up-4">
@@ -88,48 +63,10 @@
         <hr>
       
       </div>
-      <div class="medium-6 large-5 columns">
-        <%-- <h3>Order Summary </h3>
-        <p> </p>
-
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Cart Total</label>
-          </div>
-          <div class="small-3 columns">
-             
-            <label for="middle-label" class="middle" id="cart_total_label">$<%=orderTotal %></label>
-           </div>
-           
-       </div>
-
-
-
-          <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">VAT </label>
-          </div>
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Applicable Tax </label>
-           </div>
-           
-        </div>
-    
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Order Total  </label>
-          </div>
-          <div class="small-3 columns">
-          
-            <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
-           </div>
-      
-        </div>
+      <div class="small-3 columns"></div>  
 
 		  
-		<input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
-        <input type="submit" class="button large expanded" value="Checkout"/>
-        --%>
+
       </div>  
    
  </div>

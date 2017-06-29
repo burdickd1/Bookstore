@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.qa.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,9 +19,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.qa.models.Address;
+import com.qa.models.Author;
 import com.qa.models.Book;
 import com.qa.models.Customer;
 import com.qa.models.Purchase;
+import com.qa.services.AddressService;
 import com.qa.services.BookService;
 import com.qa.services.CustomerService;
 import com.qa.services.OrderService;
@@ -34,9 +38,15 @@ public class HomeController {
 
 	@Autowired
 	CustomerService customerService;
+	
+	@Autowired
+	AddressService addressService;
 
 	@Autowired
 	OrderService orderService;
+
+
+
 
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request) {
@@ -137,6 +147,12 @@ public class HomeController {
 		if (c != null) {
 			System.out.println("Success");
 			modelAndView = new ModelAndView("index", "logged_in_customer", c);
+			Address a = addressService.findAddressByType(c.getCustomerId(), "billing");
+			
+			if(a != null) {
+				modelAndView = new ModelAndView("index", "Address", a);
+			}
+			
 		} else {
 			System.out.println("Failure");
 			modelAndView = new ModelAndView("login");
@@ -240,23 +256,36 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/search")
-	public ModelAndView serach(@ModelAttribute("searchterm")String term){
+	public ModelAndView serach(
+			@ModelAttribute("searchterm")String term){
 		List<Book> myBooks = bookService.searchBooks("%" + term + "%");
-		System.out.println("Search for %ance%: " + myBooks);
+		List<Book> allBooks = (ArrayList<Book>) bookService.findAll();
+		List<Book> booksByAuth = new ArrayList<Book>();
+		allBooks.removeAll(myBooks);
+		for(Book b : allBooks){
+			for(Author a : b.getAuthors()){
+				if(a.getAuthorName().toLowerCase().contains(term.toLowerCase())){
+					System.out.println("name: " + a.getAuthorName());
+					booksByAuth.add(b);
+				}
+			}
+		}
+		for(Book b : booksByAuth){
+			myBooks.add(0, b);
+		}
+		
+		System.err.println("Search for %" + term + "%: " + myBooks);
 		ModelAndView mav = new ModelAndView("searchresults", "books", myBooks);
 		mav.addObject("searchterm", term);
-		mav.addObject("start", new Integer(10));
 		return mav;
 	}
 	
 	@RequestMapping("/searchresults")
 	public ModelAndView searchResults(@
 			ModelAttribute("books")List<Book>myBooks,
-			@ModelAttribute("searchterm")String term,
-			@ModelAttribute("start")Integer startnum){
+			@ModelAttribute("searchterm")String term){
 		ModelAndView mav = new ModelAndView("searchresults", "books", myBooks);
 		mav.addObject("searchterm", term);
-		mav.addObject("start", startnum + 10);
 		return mav;
 	}
 
