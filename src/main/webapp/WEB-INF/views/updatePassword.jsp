@@ -24,9 +24,9 @@
         <form action="/updatePassword" method="post">
            <h2 class="text-center"> Update Password </h2>
            <input type="hidden" name="id" value="<%= c.getCustomerId() %>"/>
-           <input type="password" placeholder="Old Password" name="old_password" id="old_password"/> 
-           <input type="password" placeholder="New Password" name="password" id="password"/> 
-           <input type="password" placeholder="Confirm Password" name="password2" id="password2"/>
+           <input type="password" placeholder="Old Password" name="old_password" id="old_password" required/> 
+           <input type="password" placeholder="New Password" name="password" id="password" required/> 
+           <input type="password" placeholder="Confirm Password" name="password2" id="password2" required/>
            <input type="submit" class="button update password expanded" value="Update Password">    
          </form> 
          

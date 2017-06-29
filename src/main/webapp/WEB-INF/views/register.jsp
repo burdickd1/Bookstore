@@ -27,7 +27,7 @@
 	          	<a href="#" data-open="myModal">Registered User Agreement </a> and agree to be bound by all of its terms. 
 				<div id="myModal" class="reveal" data-reveal >
 					<jsp:include page="/WEB-INF/views/EULA.jsp"></jsp:include>
-					<a class="close-button" data-close>&#215;</a>
+					<a class="close-button" data-close onclick="location.reload();">&#215;</a>
 				</div>
 				<br><br>
 				<input type="submit" class="button create account expanded" value="Create Account">

@@ -38,6 +38,7 @@
       </div>
       <div class="medium-6 large-5 columns">
         <h3><%=book.getTitle() %></h3>
+        <h5><%=book.getAuthors().size() > 0 ? book.getAuthors().get(0).getAuthorName() : "Unk" %></h5>
         <p><%=book.getDescription() %></p>
 
 		<form action="/addToCart" method="get">

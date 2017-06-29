@@ -15,7 +15,6 @@ var show = function(time, item) {
     setTimeout(function () {
         self.item.classList.add("show-banner");
         self.item.classList.remove("hide-banner");
-        show(self.time, self.item);
     }, time);
 };
 
@@ -24,7 +23,6 @@ $(document).ready(function() {
     var sale = document.getElementById("banner-head");
     var vid = document.getElementById("bgvid");
     vid.playbackRate = 0.7;
-    show(12000,sale);
-    hide(14300,sale);
+    show(13500,sale);
 });
 

@@ -143,7 +143,7 @@
           </div>
           <div class="small-3 columns">
             <input type="hidden" name="order_total" id="order_total" value="<%=totalCost %>"/>
-            <label for="middle-label" class="middle" id="order_total_label">$<%=totalCost %></label>
+            <label for="middle-label" class="middle" id="order_total_label">$<%=orderS %></label>
            </div>
       
         </div>

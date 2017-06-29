@@ -23,10 +23,6 @@ public class Purchase {
         return purchaseId;
     }
 
-    public void setPurchaseId(int purchaseId) {
-        this.purchaseId = purchaseId;
-    }
-
     public int getBookIdPurchase() {
         return bookIdPurchase;
     }

@@ -16,10 +16,10 @@
 				<h2>Contact</h2>
 			</div>
 			<p class="formFont"> Feel free to contact us at 555-555-5555 with any questions or concerns. </p>
-			<p class="formFont"> Additionally, you can send us a message and we will get back to you as soon as we can: </p>
+			<p class="formFont"> Additionally, you can request a book or send us a message and we will get back to you as soon as we can! </p>
 			<form action="">
-				<input type="text" name="email" placeholder="Email" />
-				<textarea name="message" cols="50" rows="10" style="resize:none" placeholder="Type Your Message Here..."></textarea>
+				<input type="email" name="email" placeholder="Email" required/>
+				<textarea name="message" cols="50" rows="10" style="resize:none" placeholder="Type Your Message Here..." required></textarea>
 				<input class="button expanded" type="submit" name="submit">
 			</form>
 		</div>
