@@ -16,7 +16,7 @@
 				<h2>About</h2>
 			</div>
 			<p class="formFont">ChickenCluckers.com is owned entirely by ChickenCluckers Corp., a privately traded company
-			listed on the FAKE under the symbol of CCC. </p> <br>
+			listed on the FAKESE under the symbol of CCC. </p> <br>
 			<p class="formFont">ChickenCluckers.com uses the recognition of our brand as a premier book provider across the country. 
 			</p> <br>
 			<p class="formFont">We LOVE <span style="text-decoration:line-through">chickens</span> books! 
