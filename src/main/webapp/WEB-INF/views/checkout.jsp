@@ -57,20 +57,12 @@
         </div>
         
         <div class="row">
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle">Tax </label>
-            </div>
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle" id="tax_label">$<%=tax%> </label>
-            </div>
-        </div>
-    
-        <div class="row">
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle">Order Total  </label>
-            </div>
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
+            <div class="small-3 form">
+                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=tax%></label>
+                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal%></label>
+                <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
+		        <input type="hidden" name="tax"value="<%=tax%>"/>
+		        <input type="submit" class="button expanded" value="Checkout" />
             </div>
         </div>
         
@@ -110,27 +102,16 @@
         </div>
         
         <div class="row">
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle">Tax </label>
-            </div>
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle" id="tax_label">$<%=tax%> </label>
-            </div>
-        </div>
-    
-        <div class="row">
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle">Order Total  </label>
-            </div>
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
+            <div class="small-3 form">
+                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=tax%></label>
+                <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal%></label>
+                <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
+		        <input type="hidden" name="tax"value="<%=tax%>"/>
+		        <input type="submit" class="button expanded" value="Checkout" />
             </div>
         </div>
         
         <% } %>
-        <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
-        <input type="hidden" name="tax"value="<%=tax%>"/>
-        <input type="submit" class="button large expanded" value="Checkout" />
     </form>
         
     <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>

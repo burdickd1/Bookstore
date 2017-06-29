@@ -7,7 +7,7 @@
 <%@page import="java.text.DecimalFormat" %>
 <html class="no-js" lang="en">
 <%
- 	request.setAttribute("pagetitle", "Account | Online Shopping");
+ 	request.setAttribute("pagetitle", "Shopping Cart | Online Shopping");
 	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
 	rd.include(request, response);
 %>
@@ -59,31 +59,31 @@
 
       %>
        
-        <img class="thumbnail" src="<%=book.getBookImage()%>"/>
+        <img class="thumbnail" style="width: 200px; height 250px;" src="<%=book.getBookImage()%>"/>
         <div class="row small-up-4">
         
           <div class="column">
-            eBook ISBN : <%=book.geteBookISBN()%>
+            <p>eBook ISBN : <%=book.geteBookISBN()%></p>
           </div>
           <div class="column">
-            Print book ISBN <%=book.getPaperISBN()%>
+            <p>Print book ISBN: <%=book.getPaperISBN()%></p>
           </div>
           
           <div class="column">
            
           </div>
           <div class="column">
-            Published On <%=book.getPublishedDate()%>
+            <p>Published On: <%=book.getPublishedDate()%></p>
           </div>
           
           <div class="column">
             <form name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
-            	Price <label id="price_label<%=i%>">$<%=totalPrice%></label>
+            	Price:<label id="price_label<%=i%>">$<%=totalPrice%></label>
             	<input type="hidden" name="cart_total" value="<%=price%>"/>
                 <input type ="hidden" id ="old_quant" name="old_quant" value = "1" />
-            	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,old_quant.value, this.value,price_label<%=i%>)"/>
+            	<p style="display:inline-block">Quantity:</p> <input style="display:inline-block" type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,old_quant.value, this.value,price_label<%=i%>)"/>
             </form>
           </div>
           
