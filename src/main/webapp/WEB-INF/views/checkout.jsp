@@ -67,10 +67,11 @@
         
         <div class="row">
             <div class="small-3 form">
-                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=tax%></label>
+                <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=taxS%></label>
                 <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderS%></label>
-                <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
+                 <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
 		        <input type="hidden" name="tax"value="<%=tax%>"/>
+		        <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
 		        <input type="submit" class="button expanded" value="Checkout" />
             </div>
         </div>

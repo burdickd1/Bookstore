@@ -13,7 +13,7 @@
   <body>
 	<jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
     
-    <form action="/order_history" method="post">
+    <form action="/orderHistory" method="post">
     
     
     <%
