@@ -1,28 +1,26 @@
 <!doctype html>
 <html class="no-js" lang="en">
  <%
- 	request.setAttribute("pagetitle", "Contact | Online Shopping");
+ 	request.setAttribute("pagetitle", "Login | Online Shopping");
 	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
 	rd.include(request, response);
+	double orderTotal = (Double) request.getAttribute("order_total");
+    String tax = request.getParameter("tax");
 %>
   <body>
 	<jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
-    
-    
-
-    <div class="callout large">
-      <div class="row column text-center">
-        
-        
-        <div class="medium-6 columns22">
-           <h3> Please login using your stored credentials  </h3>
+   
                 
-               <form action="/loginProcessThroughCheckout" method="post"> 
-                <input type="text" placeholder="Enter email" name="email" id="email"/>
-				 <input type="password" placeholder="Enter Password" name="password" id="password"/>
-            	<input type="submit" class="button expanded" value="Submit">
-              
-              </form>
+     <div class="large" style="padding-top: 50px;">
+      <div class="row column">
+        <div class="small-3 form">
+		  <h2 class="text-center">Please login to your account</h2>
+		  <br>
+		  <form action="/checkout" method="post" id="checkout_form">
+		<input type="hidden" name="tax" value="<%=tax %>"/>    
+		<input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
+        <input type="submit" class="button expanded" value="Login and checkout"/>
+        </form> 
             </div>
       
       </div>

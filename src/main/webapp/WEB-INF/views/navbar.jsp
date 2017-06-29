@@ -13,8 +13,12 @@
   </div>
   <div class="top-bar-right">
     <ul class="menu">
-      <% if (session.getAttribute("logged_in_customer") != null) {  	  
-      Customer c = (Customer) session.getAttribute("logged_in_customer"); %>
+      <%
+      
+      if (session.getAttribute("logged_in_customer") != null) {  	  
+      Customer c = (Customer) session.getAttribute("logged_in_customer"); 
+      
+      %>
       <li><a style="cursor:default">Welcome, <b><%= c.getFirstName() %></b></a></li>
       <li class="dropdown">
         <a style="padding: 0px;">

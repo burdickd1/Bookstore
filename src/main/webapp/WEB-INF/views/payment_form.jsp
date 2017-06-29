@@ -19,6 +19,8 @@
     <%
     
     double orderTotal = (Double) request.getAttribute("order_total");
+    double cartTotal = (Double) request.getAttribute("cart_total");
+    double tax = (Double) request.getAttribute("tax");
     
    
     %>
@@ -44,8 +46,8 @@
             <input type="text" name="cvv" id="cvv" size="30" placeholder="CVV *"/>
             <br>
             <h2 class="text-center">Order Summary </h2>
-            <label for="middle-label" class="middle">Cart Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal %></label>
-            <label for="middle-label" class="middle">VAT: &nbsp&nbsp&nbsp&nbsp Applicable Tax</label>
+            <label for="middle-label" class="middle">Cart Total: &nbsp&nbsp&nbsp&nbsp $<%=cartTotal %></label>
+            <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=tax %></label>
             <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderTotal%> </label>
             <input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
         	<input type="submit" class="button large expanded" value="Checkout"/>
