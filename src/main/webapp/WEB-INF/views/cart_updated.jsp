@@ -8,13 +8,13 @@
   <body>
 	<jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
 
-    <div class="callout large">
+    <div class="callout large form">
       <div class="row column text-center">
-        <h1>Item added to cart </h1>
+        <h2>Item added to cart </h2>
         
-        <a href="/" class="button large">Back to Items </a>
+        <a href="/" class="button large" style="width: 300px;">Back to Items </a>
          <h2 class="text-center form-break">--&nbsp;OR&nbsp;--<br></h2>
-		  <a href="/viewCart" class="button large">Go to Cart</a>
+		  <a href="/viewCart" class="button large" style="width: 300px;">Go to Cart</a>
       
       </div>
     </div>
