@@ -123,6 +123,14 @@ video {
 	color: white;
 }
 
+.video-textbox h4 {
+	font-family: 'Righteous', cursive;
+	padding-top: 30%;
+	padding-left: 30px;
+	color: white;
+	
+}
+
 .hide-banner {
     display:none;
 }

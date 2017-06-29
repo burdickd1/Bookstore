@@ -17,8 +17,10 @@
     <aside id="banner-head" style="position:absolute; width:100%; height:600px" class="animated fadeIn hide-banner">
     	<div class="gradient-textbox">
     		<div class="video-textbox">
-    			<h1><span style="color: red">Fourth</span><span style="color: white"> of</span> <span style="color: blue">July</span> <span style="color: white">Sale</span></h1>
+    			<h1><span style="color: red">Fourth</span><span style="color: white"> of</span> <span style="color: #002868">July</span> <span style="color: white">Sale</span></h1>
     			<h3>July 1st through 7th</h3>
+    			<h4><span style="color:red; font-size: 75px;">75%</span><span style="font-size: 15px;"> off everything!</span></h4>
+    			</div>
     		</div>
         
         <div class="small-3 columns"></div>
