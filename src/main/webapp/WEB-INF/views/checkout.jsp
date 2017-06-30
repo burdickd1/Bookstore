@@ -13,14 +13,13 @@
     RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/meta.jsp");
     rd.include(request, response);
 
+
     Double orderTotal = (Double) request.getAttribute("order_total"); 
     Double cartTotal = (Double) request.getAttribute("cart_total");
     Double tax = (Double) request.getAttribute("tax");
     String orderS = String.format("%.2f", orderTotal);
     String taxS= String.format("%.2f",tax);
     String cartS = String.format("%.2f", cartTotal);
-    System.out.println("tax value " + tax);
-    System.out.println("tax string = " + taxS);
 %>
   <body>
     <jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>

@@ -37,10 +37,10 @@
                 <div class="row small-up-shiping">
 
                     <div class="columns">
-                        <input type="number" name="creditCardNum" id="creditCardNum"
+                        <input type="number" name="cardNumber" id="cardNumber"
                             size="30" placeholder="Card Number *"
                             required />
-                        <select name='expMonth' id='expireMonth'>
+                        <select name='expireMonth' id='expireMonth'>
                             <option value=''>Month</option>
                             <option value='01'>January</option>
                             <option value='02'>February</option>
@@ -55,11 +55,13 @@
                             <option value='11'>November</option>
                             <option value='12'>December</option>
                         </select>
-                        <select name='expYear' id='expireYear'>
+                        <select name='expireYear' id='expireYear'>
                             <option value=''>Year</option>
-                            <option value='10'>2010</option>
-                            <option value='11'>2011</option>
-                            <option value='12'>2012</option>
+                            <option value='2017'>2017</option>
+                            <option value='2018'>2018</option>
+                            <option value='2020'>2020</option>
+                            <option value='2021'>2021</option>
+                            <option value='2022'>2022</option>
                         </select>
                         <input type="number" name="cvv" id="cvv"
                             size="30" placeholder="CVV *" required /> <br>

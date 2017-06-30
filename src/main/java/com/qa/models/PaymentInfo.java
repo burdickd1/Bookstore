@@ -5,7 +5,13 @@ import javax.persistence.*;
 @Entity
 public class PaymentInfo {
 	
-	int paymentInfoId, customerIdPayment, addressIdPayment, expireYear, expireMonth, creditCardNum;
+	int paymentInfoId;
+	int customerpaymentId;
+	int addresspaymentId;
+	int cardNumber;
+	int expireYear;
+	int expireMonth;
+	int cvv;
 	
 	@Id
 	@GeneratedValue
@@ -17,44 +23,56 @@ public class PaymentInfo {
 		this.paymentInfoId = paymentInfoId;
 	}
 	
-	public int getCustomerId() {
-		return customerIdPayment;
+	public int getCustomerpaymentId() {
+		return customerpaymentId;
 	}
-	public void setCustomerId(int customerId) {
-		this.customerIdPayment = customerId;
+	public void setCustomerpaymentId(int customerpaymentId) {
+		this.customerpaymentId = customerpaymentId;
 	}
-	public int getAddressId() {
-		return addressIdPayment;
+	public int getAddresspaymentId() {
+		return addresspaymentId;
 	}
-	public void setAddressId(int addressId) {
-		this.addressIdPayment = addressId;
+	public void setAddresspaymentId(int addresspaymentId) {
+		this.addresspaymentId = addresspaymentId;
 	}
-	public int getExpYear() {
+	public int getExpireYear() {
 		return expireYear;
 	}
-	public void setExpYear(int expYear) {
+	public void setExpireYear(int expYear) {
 		this.expireYear = expYear;
 	}
-	public int getExpMonth() {
+	public int getExpireMonth() {
 		return expireMonth;
 	}
-	public void setExpMonth(int expMonth) {
+	public void setExpireMonth(int expMonth) {
 		this.expireMonth = expMonth;
 	}
-	public long getCreditCardNum() {
-		return creditCardNum;
+	public long getCardNumber() {
+		return cardNumber;
 	}
-	public void setCreditCardNum(int creditCardNum) {
-		this.creditCardNum = creditCardNum;
+	public void setCardNumber(int cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public int getCvv() {
+		return cvv;
+	}
+
+	public void setCvv(int cvv) {
+		this.cvv = cvv;
 	}
 
 	@Override
 	public String toString() {
-		return "PaymentInfo [paymentInfoId=" + paymentInfoId + ", customerIdPayment=" + customerIdPayment
-				+ ", addressIdPayment=" + addressIdPayment + ", expireYear=" + expireYear + ", expireMonth="
-				+ expireMonth + ", creditCardNum=" + creditCardNum + "]";
+		return "PaymentInfo{" +
+						"paymentInfoId=" + paymentInfoId +
+						", customerpaymentId=" + customerpaymentId +
+						", addresspaymentId=" + addresspaymentId +
+						", cardNumber=" + cardNumber +
+						", expireYear=" + expireYear +
+						", expireMonth=" + expireMonth +
+						", cvv=" + cvv +
+						'}';
 	}
-	
 
-	
 }

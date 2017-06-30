@@ -119,7 +119,6 @@
             <label for="middle-label" class="middle">Cart Total</label>
           </div>
           <div class="small-3 columns">
-             <input type="hidden" name="cart_total" id="cart_total" value="<%=cartTotal %>"/>
             <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %></label>
            </div>
            
@@ -131,7 +130,6 @@
             <label for="middle-label" class="middle">Tax </label>
           </div>
           <div class="small-3 columns">
-          	<input type="hidden" name="tax" id="tax" value="<%=tax %>"/>
             <label for="middle-label" class="middle" id="tax_label">$<%=taxS %></label>
            </div>
            
@@ -142,16 +140,15 @@
             <label for="middle-label" class="middle">Order Total  </label>
           </div>
           <div class="small-3 columns">
-            <input type="hidden" name="order_total" id="order_total" value="<%=totalCost %>"/>
             <label for="middle-label" class="middle" id="order_total_label">$<%=orderS %></label>
            </div>
       
         </div>
 
 		<form action="/checkout" method="post" id="checkout_form">
-		<input type="hidden" name="tax" value="<%=tax %>"/>
-		<input type="hidden" name="cart_total" value="<%=cartTotal %>"/>  
-		<input type="hidden" name="order_total" value="<%=totalCost %>"/>
+		<input type="hidden" name="tax" id="tax" value="<%=tax %>"/>
+		<input type="hidden" name="cart_total" id="cart_total" value="<%=cartTotal %>"/>
+		<input type="hidden" name="order_total" id="order_total" value="<%=totalCost %>"/>
         <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
         </form> 
       </div>  

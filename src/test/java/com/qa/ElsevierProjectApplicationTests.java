@@ -68,8 +68,8 @@ public class ElsevierProjectApplicationTests {
 //		b4 = bs.findOne(13);
 //		books = new ArrayList<Book>(Arrays.asList(b1, b2, b3, b4));
 		
-		c = cs.findOne(10);	
-		address = as.findOne(1);
+		c = cs.findOne(65);
+		address = as.findOne(1032);
 		p = os.findOne(0);
 		purchases = new ArrayList<Purchase>(Arrays.asList(p));
 		
@@ -144,18 +144,6 @@ public class ElsevierProjectApplicationTests {
 		assertEquals(i, 1);
 	}
 	
-	@Test
-	public void testFindAddressByType() {
-		Address test = as.findAddressByType(address.getCustomerId(), address.getAddressType());
-		assertEquals(test.getCustomerId(), address.getCustomerId());
-	}
-	
-	//OrderService
-	@Test
-	public void testFindByCustomerId() {
-		assertEquals(os.findByCustomerId(c.getCustomerId()).get(0).getCustomerIdPurchase(), purchases.get(0).getCustomerIdPurchase());
-	}
-	
 	//Book Controller
 	@Test
 	public void testLoadBookIds() {
@@ -210,7 +198,7 @@ public class ElsevierProjectApplicationTests {
 	
 	@Test
 	public void testGetCustomerIdPurchase() {
-		assertEquals(p.getCustomerIdPurchase(), 10);
+		assertEquals(p.getCustomerIdPurchase(), 18);
 	}
 	
 	@Test
@@ -221,7 +209,7 @@ public class ElsevierProjectApplicationTests {
 	
 	@Test
 	public void testGetDate() {
-		assertEquals(os.findByCustomerId(c.getCustomerId()).get(0).getDate(), purchases.get(0).getDate());
+		assertEquals(os.findByCustomerId(18).get(0).getDate(), purchases.get(0).getDate());
 	}
 	
 	@Test
@@ -244,13 +232,13 @@ public class ElsevierProjectApplicationTests {
 	
 	@Test
 	public void testPurchaseToString() {
-		assertEquals(p.toString(), "Purchase{bookIdPurchase=318, customerIdPurchase=10, date=" + p.getDate() + ", quantity=7}");
+		assertEquals(p.toString(), "Purchase{bookIdPurchase=318, customerIdPurchase=18, date=" + p.getDate() + ", quantity=7}");
 	}
 	
 	//Customer
 	@Test
 	public void testGetCustomerId() {
-		assertEquals(c.getCustomerId(), 10);
+		assertEquals(c.getCustomerId(), 65);
 	}
 	
 	@Test
@@ -266,7 +254,7 @@ public class ElsevierProjectApplicationTests {
 	
 	@Test
 	public void testGetLastName() {
-		assertEquals(c.getLastName(), "Godar");
+		assertEquals(c.getLastName(), "Herety");
 	}
 	
 	@Test
@@ -277,7 +265,7 @@ public class ElsevierProjectApplicationTests {
 	
 	@Test
 	public void testGetEmail() {
-		assertEquals(c.getEmail(), "lgodar9@google.de");
+		assertEquals(c.getEmail(), "lherety1s@youtube.com");
 	}
 	
 	@Test
@@ -288,7 +276,7 @@ public class ElsevierProjectApplicationTests {
 	
 	@Test
 	public void testGetPassword() {
-		assertEquals(c.getPassword(), "VnYAfTaj7E");
+		assertEquals(c.getPassword(), "wU4ioNhIC");
 	}
 	
 	@Test
@@ -299,8 +287,7 @@ public class ElsevierProjectApplicationTests {
 	
 	@Test
 	public void testCustomerToString() {
-		assertEquals(c.toString(), "Customer [customerId=10, firstName=Lilllie, "
-				+ "lastName=Godar, email=lgodar9@google.de, password=VnYAfTaj7E]");
+		assertEquals(c.toString(), "Customer [customerId=65, firstName=Lilllie, lastName=Herety, email=lherety1s@youtube.com, password=wU4ioNhIC]");
 	}
 	
 }

@@ -312,12 +312,14 @@ public class HomeController {
 			@ModelAttribute("logged_in_customer") Customer customer) {
 
 		ModelAndView modelAndView = null;
-		payment.setCustomerId(customer.getCustomerId());
-		payment.setAddressId(customer.getCustomerId());
+		payment.setCustomerpaymentId(customer.getCustomerId());
+		Address add = addressService.findAddressByType(customer.getCustomerId(), "billing");
+		if (add != null) {
+			payment.setAddresspaymentId(add.getAddressId());
+		}
 		PaymentInfo p = paymentService.save(payment);
-		System.out.println("Purchase: " + p);
-			System.err.println("CHICKEKKENNENENN");
-			modelAndView = new ModelAndView("redirect:orderHistory");
+		System.out.println("Payment: " + p);
+		modelAndView = new ModelAndView("redirect:orderHistory");
 
 
 		return modelAndView;

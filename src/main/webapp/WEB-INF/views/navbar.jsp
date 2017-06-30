@@ -17,9 +17,8 @@
       
       if (session.getAttribute("logged_in_customer") != null) {  	  
       Customer c = (Customer) session.getAttribute("logged_in_customer"); 
-      
       %>
-      <li><a style="cursor:default">Welcome, <b><%= c.getFirstName() %></b></a></li>
+      <li><a style="cursor:default">Welcome, <b><span><%= c.getFirstName() %></span></b></a></li>
       <li class="dropdown">
         <a style="padding: 0px;">
             <i class="fi-torso navbar-icon" href="#account" style="padding: 5px 10px;"></i>
