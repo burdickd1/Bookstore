@@ -24,7 +24,7 @@
   <body>
     <jsp:include page="/WEB-INF/views/navbar.jsp"></jsp:include>
     
-    <form action="/checkoutProcess" method="post">
+    <div>
 
         <%
             if( (session.getAttribute("logged_in_customer")!=null) && (session.getAttribute("Address")!=null) ) {
@@ -65,7 +65,7 @@
         
         </div>
         
-        <div class="row">
+        <form action="/checkoutProcess" method="post" class ="row">
             <div class="small-3 form">
                 <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=taxS%></label>
                 <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderS%></label>
@@ -111,20 +111,19 @@
         
         </div>
         
-        <div class="row">
+        <form action="/checkoutProcess" method="post" class ="row">
             <div class="small-3 form">
                 <label for="middle-label" class="middle">Tax: &nbsp&nbsp&nbsp&nbsp $<%=taxS%></label>
                 <label for="middle-label" class="middle">Order Total: &nbsp&nbsp&nbsp&nbsp $<%=orderS%></label>
-                <input type="hidden" name="order_total"value="<%=orderTotal%>"/>
-		        <input type="hidden" name="tax"value="<%=tax%>"/>
+                <input type="hidden" name="order_total" value="<%=orderTotal%>"/>
+		        <input type="hidden" name="tax" value="<%=tax%>"/>
 		        <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
 		        <input type="submit" class="button expanded" value="Checkout" />
-		        <!-- <h2 class="text-center form-break">--&nbsp;OR&nbsp;--<br></h2> -->
             </div>
-        </div>
+        </form>
         
         <% } %>
-    </form>
+    </div>
         
     <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

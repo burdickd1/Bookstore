@@ -16,7 +16,7 @@ import com.qa.models.Book;
 import com.qa.services.BookService;
 
 @Controller
-@SessionAttributes(names = { "books", "cart_items", "book_counts", "filtered_books" })
+@SessionAttributes(names = { "books", "cart_items", "book_counts", "filtered_books", "logged_in_customer" })
 public class BookController {
 
 	@Autowired

@@ -31,7 +31,7 @@
     books  = (ArrayList<Book>) session.getAttribute("filtered_books");
     
     bookCounts = (Map<Integer,Integer>)  session.getAttribute("book_counts");
-    
+
     double cartTotal = 0.0;
     double totalPrice =  0.0;
     %>

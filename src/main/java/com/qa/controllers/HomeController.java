@@ -318,7 +318,6 @@ public class HomeController {
 			payment.setAddresspaymentId(add.getAddressId());
 		}
 		PaymentInfo p = paymentService.save(payment);
-		System.out.println("Payment: " + p);
 		modelAndView = new ModelAndView("redirect:orderHistory");
 
 

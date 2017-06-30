@@ -37,9 +37,10 @@ public class CheckoutController {
 			@RequestParam("tax") double tax,
 			@ModelAttribute("filtered_books") ArrayList<Book> books,
 			@ModelAttribute("logged_in_customer") Customer customer){
-		
+
 		Date date = new Date();
 		Iterator<Integer> it = bookCounts.values().iterator();
+		Iterator<Integer> test = bookCounts.keySet().iterator();
 		Purchase purchase =new Purchase();
 		for(Book book : books){
 			Purchase p = new Purchase();
@@ -49,9 +50,8 @@ public class CheckoutController {
 			p.setQuantity(it.next());
 			purchase = orderService.save(p);
 		}
-
 		if(purchase!=null){
-			ModelAndView modelAndView = new ModelAndView("redirect:payment_form", "order_total", orderTotal);
+			ModelAndView modelAndView = new ModelAndView("payment_form", "order_total", orderTotal);
 			modelAndView.addObject("cart_total", cartTotal);
 			modelAndView.addObject("tax", tax);
 			modelAndView.addObject("shipping_address", shipping);
